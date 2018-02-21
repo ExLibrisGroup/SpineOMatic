@@ -176,7 +176,7 @@ Public Class Form1
     Dim javaSDKName As String = "alma-sdk.1.0.jar" 'the Ex Libris SDK for web services
     Dim javaTest As String = "javatest" 'java class that reports presence and version of java
     Dim mypath As String = "" 'path of startup directory will be used as mypath
-    Dim servers As String = "arc.bc.edu:8080|libstaff.bc.edu:8080|mlib.bc.edu:8080"
+    Dim strDownloadBaseURL As String = "http://arc.bc.edu:8080/Getfile/get?file="
     Dim lcxml As String = ""
     Dim issuexml As String = ""
     Dim locxml As String = ""
@@ -257,6 +257,8 @@ Public Class Form1
     Dim usingDewey As Boolean = False
     Dim xtb As TextBox
     Dim xtbOrigColor As Color
+
+    Private objDownloadManager As DownloadManager = New DownloadManager(strDownloadBaseURL, somVersion, mypath)
     Private Const LB_SETTABSTOPS As Int32 = &HCB
 
 
@@ -396,7 +398,7 @@ Public Class Form1
         Else
             openSettings() 'open the settings panels
             licensePanel.Size = New Size(756, 410) 'make license panel the same size as the form
-            licenseHeadline.Text = "SpineOMatic v." & somVersion & " LOOicense Agreement"
+            licenseHeadline.Text = "SpineOMatic v." & somVersion & " License Agreement"
             licensePanel.Visible = True
         End If
     End Sub
@@ -550,66 +552,13 @@ Public Class Form1
         '    "When the server is back online, update functionality will be restored.", MsgBoxStyle.Exclamation, "Server Unavailable.")
         'End If
         '
-        If UseJavaApp.Checked = True Then 'This routine can only run after all settings are loaded
-            DownloadJavaComponents()      'so that the "updatePath.text" exists (which is   
-        End If                            'used by the webdownload process)
+        If UseJavaApp.Checked = True Then
+            objDownloadManager.DownloadJavaComponents(javaClassName, javaSDKName, javaTest)
+        End If
         TabControl1.SelectedIndex = 1
         TabControl1.SelectedIndex = 0
         lbl_setclipboard.ForeColor = Color.MediumBlue
         InputBox.Focus()
-    End Sub
-
-    Private Sub setPath()
-        'attempts to download a "version.txt" file from the server specified in updatePath.text.
-        'If the attempt fails, it tries each server in the "servers" variable.
-        'If one succeeds, it becomes the new updatePath.text.
-        'If none work, a message is sent to the user.
-        Dim webClient As New WebClient()
-        Dim txt As String = ""
-        Dim trypath = updatePath.Text
-
-        Dim svr As Array = Split(servers, "|")
-        Dim svrtext As String = servers.Replace("|", vbCrLf)
-        Dim i As Integer = -1
-        Do
-            Try
-                txt = webClient.DownloadString(updatePath.Text & "version.txt")
-                Exit Do
-            Catch ex As Exception
-                i = i + 1
-                If i <= 2 Then
-                    updatePath.Text = "http://" & svr(i) & "/Getfile/get?file="
-                Else
-                    If ex.Message.Contains("407") Then
-                        MsgBox("Your local proxy server is blocking access to the SpineOMatic" & vbCrLf &
-                        "servers.  Ask your IT Networking office to allow access to ('whitelist')" & vbCrLf &
-                        "the following server(s):" & vbCrLf & vbCrLf & svrtext, MsgBoxStyle.Exclamation, "Proxy Server Block")
-
-                    Else
-                        MsgBox("Can't connect to SpineOMatic servers for updates and downloads." & vbCrLf &
-                        "This may be a temporary problem at Boston College." & vbCrLf &
-                        "SpineOMatic may still work normally if this is the case.", MsgBoxStyle.Exclamation, "Web Update Error")
-                    End If
-                    Exit Do
-                End If
-            End Try
-        Loop While True
-    End Sub
-
-    Private Sub DownloadJavaComponents()
-
-        'Checks intallation directory to see if specified ava class and the Alma Web Service
-        'class are already present.  If not, each is downloaded, as required.
-        If Not File.Exists(mypath & javaClassName & ".class") Then
-            webDownload(javaClassName & ".class", "file", updatePath.Text, mypath)
-        End If
-        If Not File.Exists(mypath & javaSDKName) Then
-            webDownload(javaSDKName, "file", updatePath.Text, mypath)
-        End If
-        If Not File.Exists(mypath & javaTest & ".class") Then
-            webDownload(javaTest & ".class", "file", updatePath.Text, mypath)
-        End If
-
     End Sub
 
     Private Function countBatch() As String
@@ -3104,28 +3053,28 @@ Public Class Form1
         ignoreChange = False
     End Sub
 
-    Private Sub writeFile(ByVal fpath As String, ByVal fstring As String, ByVal append As Boolean)
+    'Private Sub writeFile(ByVal fpath As String, ByVal fstring As String, ByVal append As Boolean)
 
-        'writes the "labelout.txt" file to path: c:\a_spine, or any other file/path
-        'passed to the subroutine. "append" is true to append, false to replace file data.
-        Dim sw As StreamWriter
-        Dim i As Integer = 0
-        Dim listrec As String = ""
-        Try
-            If (Not File.Exists(fpath)) Then
-                sw = File.CreateText(fpath)
-                sw.Close()
-            End If
+    '    'writes the "labelout.txt" file to path: c:\a_spine, or any other file/path
+    '    'passed to the subroutine. "append" is true to append, false to replace file data.
+    '    Dim sw As StreamWriter
+    '    Dim i As Integer = 0
+    '    Dim listrec As String = ""
+    '    Try
+    '        If (Not File.Exists(fpath)) Then
+    '            sw = File.CreateText(fpath)
+    '            sw.Close()
+    '        End If
 
-            sw = New StreamWriter(fpath, append)
-            sw.WriteLine(fstring)
-            sw.Close()
+    '        sw = New StreamWriter(fpath, append)
+    '        sw.WriteLine(fstring)
+    '        sw.Close()
 
-        Catch ex As IOException
-            MsgBox("error writing to file: " & fpath & vbCrLf &
-            ex.ToString)
-        End Try
-    End Sub
+    '    Catch ex As IOException
+    '        MsgBox("error writing to file: " & fpath & vbCrLf &
+    '        ex.ToString)
+    '    End Try
+    'End Sub
 
     'Private Sub GetVideoInfo()
     ' Dim query As New SelectQuery("Win32_DesktopMonitor")
@@ -3326,14 +3275,12 @@ Public Class Form1
             If InputBox.Text.ToLower = "admin" Then
                 InputBox.Text = ""
                 If settingsOpen Then CloseSettings() Else openSettings()
-                updatePath.Visible = False
                 InputBox.Focus()
             Else
                 If InputBox.Text.ToLower = "adminsecure" Then
                     InputBox.Text = ""
                     openSettings()
                     InputBox.Focus()
-                    updatePath.Visible = True
                 Else
                     If InputBox.Text.ToLower = "adminl0gv1ew" Then
                         InputBox.Text = ""
@@ -3871,89 +3818,51 @@ Public Class Form1
     End Sub
 
     Private Sub CheckForUpdates_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckForUpdates.Click
-        Dim webClient As New System.Net.WebClient()
         Dim result As String = "The new SpineOMatic file was downloaded successfully."
-        Dim msgStyle As Integer = Microsoft.VisualBasic.MsgBoxStyle.Information
-        Dim getExe As Boolean = False
-        Dim OKtoRename As Boolean = False
-        Dim webRequest As String = ""
-        Dim versionList As String = ""
-        Dim verlist As Array
-        Dim vstart As Integer = 0, vlen As Integer = 0
-        Dim pv As String = "" 'preferred version
-        Dim exename As String = ""
-        Dim i As Integer = 0
-
-        setPath()
-
-        webRequest = updatePath.Text & "som_list.txt"
+        Dim msgStyle As Integer = MsgBoxStyle.Information
+        Dim blNewVersionAvailable = False
+        Dim strDownloadConfirmMessage = ""
 
         Try
-            versionList = webClient.DownloadString(webRequest)
+            blNewVersionAvailable = objDownloadManager.CheckForNewVersion()
         Catch ex As Exception
-            msgStyle = Microsoft.VisualBasic.MsgBoxStyle.Exclamation
-            result = "ERROR--Could not get the version information from the Web." & vbCrLf &
-            "Check the update path to make sure it's valid." & ex.Message
-            getExe = False
+            msgStyle = MsgBoxStyle.Exclamation
+            result = $"ERROR--Could not get the version information from the Web. {vbCrLf} Check the update path To make sure it's valid. {ex.Message}"
             MsgBox(result, msgStyle, "SpineOMatic Download")
             Exit Sub
         End Try
-        'version list format:
-        '*SpineLabeler-1_6;20120801 (* means this is the preferred version)
-        'SpineLabeler-1_5;20120731  (program name-version_subversion ; date of release)
-        '...etc
-        verlist = Split(versionList, vbCrLf)
-        For i = 0 To verlist.Length - 1
-            If InStr(verlist(i).ToString, "*") Then 'if preferred version is found
-                pv = verlist(i).ToString            'parse name and version number
-                exename = pv.Substring(1, pv.IndexOf(";") - 1)
-                vstart = pv.IndexOf("-") + 1
-                vlen = pv.IndexOf(";") - vstart
-                pv = pv.Substring(vstart, vlen)
-                pv = pv.Replace("_", ".")
-                Exit For
-            End If
-        Next
 
-        If pv <> "" And somVersion <> pv Then   'if a preferred version is found, and it's not the version we're running
-            Dim box = MessageBox.Show("You are running version " & somVersion & ", but" & vbCrLf &
-            "the preferred version is " & pv & vbCrLf & "Do you want to download it now?", "Download Decision", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If box = box.No Then
-                result = "A new version of SpineOMatic will not be downloaded at this time."
-                getExe = False
-            Else
-                webRequest = updatePath.Text & exename & ".exe"
-                getExe = True
-            End If
-        Else
+        If Not blNewVersionAvailable Then
             MsgBox("You are currently using the recommended version of SpineOMatic.")
             Exit Sub
         End If
 
-        If getExe Then
-            Try
-                webClient.DownloadFile(webRequest, mypath & exename & ".exe")
-                OKtoRename = True
-            Catch ex As Exception
-                msgStyle = Microsoft.VisualBasic.MsgBoxStyle.Exclamation
-                result = "ERROR--Unable to download the new version of SpineOMatic." _
-                & vbCrLf & vbCrLf & ex.ToString()
-            End Try
-        End If
-        If OKtoRename Then
-            My.Computer.FileSystem.RenameFile(mypath & "SpineLabeler.exe", "SpineLabeler-" & somVersion.Replace(".", "_") & ".exe")
-            My.Computer.FileSystem.RenameFile(mypath & exename & ".exe", "SpineLabeler.exe")
-            result = "SpineOMatic version " & pv & " has been downloded." & vbCrLf &
-            "You must close and restart SpineOMatic to begin using the new version."
+        strDownloadConfirmMessage = $"You are running version {somVersion}, but {vbCrLf} the preferred version is {objDownloadManager.PreferredVersion}. {vbCrLf} Do you want To download it now?"
+        Dim box = MessageBox.Show(strDownloadConfirmMessage, "Download Decision", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If box = box.No Then
+            result = "A New version Of SpineOMatic will not be downloaded at this time."
+            MsgBox(result, msgStyle, "SpineOMatic Download")
+            Exit Sub
         End If
 
+        Try
+            objDownloadManager.DownloadNewVersion()
+        Catch ex As Exception
+            msgStyle = MsgBoxStyle.Exclamation
+            result = $"Error--Unable To download the New version Of SpineOMatic. {vbCrLf}{vbCrLf} {ex.ToString()}"
+            MsgBox(result, msgStyle, "SpineOMatic Download")
+            Exit Sub
+        End Try
+
+        result = $"SpineOMatic version {objDownloadManager.PreferredVersion} has been downloaded. {vbCrLf} You must close And restart SpineOMatic To begin Using the New version."
         MsgBox(result, msgStyle, "SpineOMatic Download")
     End Sub
 
     Private Sub batchNumber_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles batchNumber.ValueChanged
         If Not settingsLoaded Then Exit Sub
         Dim ln As Integer = 0
-        ManualPrint.Text = "Add to batch #" & batchNumber.Value.ToString()
+        ManualPrint.Text = "Add To batch #" & batchNumber.Value.ToString()
 
         batchPreview.Text = GetBatch(batchNumber.Value)
         If batchPreview.Lines.Length > 0 Then
@@ -3966,8 +3875,8 @@ Public Class Form1
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Dim box2 = MessageBox.Show("Click OK to empty batch file #" & batchNumber.Value & ", or " & vbCrLf &
-        "click CANCEL to keep the file.", "Confirm File Clear", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        Dim box2 = MessageBox.Show("Click OK To empty batch file #" & batchNumber.Value & ", Or " & vbCrLf &
+        "click CANCEL To keep the file.", "Confirm File Clear", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
         If box2 = box2.OK Then
             writeFile(mypath & "labelbatch" & batchNumber.Value & ".txt", "", False)
             batchPreview.Text = GetBatch(batchNumber.Value)
@@ -3978,7 +3887,7 @@ Public Class Form1
                 batchEntries.Text = "0"
             End If
         Else
-            MsgBox("Label batch file #" & batchNumber.Value & " has not been cleared.")
+            MsgBox("Label batch file #" & batchNumber.Value & " has Not been cleared.")
         End If
     End Sub
 
@@ -4168,7 +4077,7 @@ Public Class Form1
         Dim webclient As New System.Net.WebClient()
         Dim docName As String = "SpineOMatic_" & somVersion & "_documentation.doc"
         Try
-            webclient.DownloadFile(updatePath.Text & docName, mypath & docName)
+            webclient.DownloadFile(strDownloadBaseURL & docName, mypath & docName)
             Process.Start(mypath & docName)
         Catch ex As Exception
             MsgBox("Unable to download documentation file: " & docName & vbCrLf & vbCrLf _
@@ -4691,7 +4600,7 @@ Public Class Form1
     Private Sub UseJavaApp_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UseJavaApp.CheckedChanged
         If settingsLoaded Then
             If UseJavaApp.Checked Then
-                DownloadJavaComponents()
+                objDownloadManager.DownloadJavaComponents(javaClassName, javaSDKName, javaTest)
             End If
         End If
     End Sub
@@ -4702,7 +4611,7 @@ Public Class Form1
         Dim result As String = ""
         Try
             'webRequest = "http://arc.bc.edu:8080/Getfile/get?file=somlog.log"
-            webRequest = updatePath.Text & "somlog.log"
+            webRequest = strDownloadBaseURL & "somlog.log"
             webClient.DownloadFile(webRequest, mypath & "somlog.log")
             OutputBox.Text = OutputBox.Text & vbCrLf & "Web log loaded"
             radioByUser.Text = "By IP"
