@@ -1,12 +1,12 @@
 Imports System.IO
 Imports System.Management
 Imports System.Drawing.Drawing2D
-Imports System.Drawing.imaging
-Imports System.Drawing.printing
+Imports System.Drawing.Imaging
+Imports System.Drawing.Printing
 Imports System.Threading
 Imports System.Globalization
 Imports System.Runtime.InteropServices
-Imports System.net
+Imports System.Net
 Imports System.Xml
 Public Class Form1
     '  |==============================================================|
@@ -260,15 +260,16 @@ Public Class Form1
     Private Const LB_SETTABSTOPS As Int32 = &HCB
 
 
-    <DllImport("user32.dll")> _
-    Private Shared Function SendMessage( _
-       ByVal hWnd As IntPtr, _
-       ByVal wMsg As Int32, _
-       ByVal wParam As IntPtr, _
+    <DllImport("user32.dll")>
+    Private Shared Function SendMessage(
+       ByVal hWnd As IntPtr,
+       ByVal wMsg As Int32,
+       ByVal wParam As IntPtr,
        ByVal lParam As IntPtr) _
        As Int32
         'DLL import is used to set margins in the Reports ("StatsOut") textbox
     End Function
+
     Private Sub SetTabs()
         '{0, 65, 110, 165, 240, 255} (original settings)
         Dim ListBoxTabs() As Integer = {0, 60, 110, 180, 240, 255}
@@ -279,7 +280,7 @@ Public Class Form1
         pinnedArray = GCHandle.Alloc(ListBoxTabs, GCHandleType.Pinned)
         ptr = pinnedArray.AddrOfPinnedObject()
         'Send LB_SETTABSTOPS message to TextBox.
-        result = SendMessage(Me.statsOut.Handle, LB_SETTABSTOPS, _
+        result = SendMessage(Me.statsOut.Handle, LB_SETTABSTOPS,
           New IntPtr(ListBoxTabs.Length), ptr)
         pinnedArray.Free()
 
@@ -304,8 +305,8 @@ Public Class Form1
         original_settings = original_settings.Replace(vbLf, "")
         If original_settings <> closing_settings Then
             'Clipboard.SetText("orig:" & vbCrLf & original_settings & vbCrLf & "new:" & vbCrLf & closing_settings)
-            Dim box = MessageBox.Show("Your settings have changed, but have not been saved." & vbCrLf & _
-            "Do you want to save them now?" & vbCrLf & vbCrLf & _
+            Dim box = MessageBox.Show("Your settings have changed, but have not been saved." & vbCrLf &
+            "Do you want to save them now?" & vbCrLf & vbCrLf &
             "(Click CANCEL to continue working.)", "Save Settings", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
             If box = box.Yes Then
                 saveSettings("todisk")
@@ -332,8 +333,8 @@ Public Class Form1
             e.Handled = True
             ManualPrint.PerformClick()
         End If
-
     End Sub
+
     Private Sub NumericKeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles inMaxLines.KeyPress, inLineSpacing.KeyPress, TextBox23.KeyPress, TextBox22.KeyPress, TextBox21.KeyPress, TextBox20.KeyPress, TextBox19.KeyPress, inMaxChars.KeyPress, inLabelWidth.KeyPress, inLabelRows.KeyPress, inLabelHeight.KeyPress, inLabelCols.KeyPress, inGapWidth.KeyPress, inGapHeight.KeyPress, inFontSize.KeyPress, inBCFontSize.KeyPress, inStartCol.KeyPress, inStartRow.KeyPress, wrapWidth.KeyPress, plMin4.KeyPress, plMin3.KeyPress, plMin2.KeyPress, plMin1.KeyPress, plMax4.KeyPress, plMax3.KeyPress, plMax2.KeyPress, plMax1.KeyPress, plDistance.KeyPress, plLeftMargin.KeyPress, convertBlankTo.KeyPress, dosBlankLines.KeyPress, dosPlTabNum.KeyPress, dosPlColNum.KeyPress, appendAscii.KeyPress  'Handles TextBox.KeyPress
         Dim tb As TextBox = sender
         Dim dc As String = ""
@@ -344,6 +345,7 @@ Public Class Form1
             Exit Sub
         End If
     End Sub
+
     Private Sub NegativeKeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles inTopMargin.KeyPress, inLeftMargin.KeyPress
         Dim tb As TextBox = sender
         Dim dc As String = ""
@@ -360,6 +362,7 @@ Public Class Form1
             tb.Text = "0"
         End If
     End Sub
+
     Private Sub limitValues(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles deweydigitsperline.KeyPress, deweyDigitsToBreak.KeyPress
         Dim tb As TextBox = sender
 
@@ -373,6 +376,7 @@ Public Class Form1
         End If
 
     End Sub
+
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         settingsfound = True
@@ -392,10 +396,11 @@ Public Class Form1
         Else
             openSettings() 'open the settings panels
             licensePanel.Size = New Size(756, 410) 'make license panel the same size as the form
-            licenseHeadline.Text = "SpineOMatic v." & somVersion & " License Agreement"
+            licenseHeadline.Text = "SpineOMatic v." & somVersion & " LOOicense Agreement"
             licensePanel.Visible = True
         End If
     End Sub
+
     Private Function getLicense() As String
         Dim currentLicense As String = ""
         Dim sr As StreamReader
@@ -408,6 +413,7 @@ Public Class Form1
         End Try
         Return currentLicense
     End Function
+
     Private Sub acceptAgreement_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles acceptAgreement.Click
         licenseDeclined = False
         Dim client As New WebClient
@@ -482,7 +488,7 @@ Public Class Form1
             FileSystemWatcher2.Path = XMLPath.Text
 
         Catch
-            MsgBox("Directory to watch for incoming XML files is not valid." & vbCrLf & _
+            MsgBox("Directory to watch for incoming XML files is not valid." & vbCrLf &
             "Path = " & XMLPath.Text, MsgBoxStyle.Exclamation, "Invalid Path")
             FileSystemWatcher1.Path = ""
         End Try
@@ -502,8 +508,8 @@ Public Class Form1
         Application.DoEvents()
         loadLabelText()
         lblStation.Text = station.Text
-        usermessage = "Please enter your User ID in the 'User:' box above." & vbCrLf & vbCrLf & _
-            "The ID must be 8 characters or less." & vbCrLf & vbCrLf & _
+        usermessage = "Please enter your User ID in the 'User:' box above." & vbCrLf & vbCrLf &
+            "The ID must be 8 characters or less." & vbCrLf & vbCrLf &
             "When done, press the ENTER key."
         If chkRequireUser.Checked Then
             usrname.Enabled = True
@@ -575,13 +581,13 @@ Public Class Form1
                     updatePath.Text = "http://" & svr(i) & "/Getfile/get?file="
                 Else
                     If ex.Message.Contains("407") Then
-                        MsgBox("Your local proxy server is blocking access to the SpineOMatic" & vbCrLf & _
-                        "servers.  Ask your IT Networking office to allow access to ('whitelist')" & vbCrLf & _
+                        MsgBox("Your local proxy server is blocking access to the SpineOMatic" & vbCrLf &
+                        "servers.  Ask your IT Networking office to allow access to ('whitelist')" & vbCrLf &
                         "the following server(s):" & vbCrLf & vbCrLf & svrtext, MsgBoxStyle.Exclamation, "Proxy Server Block")
 
                     Else
-                        MsgBox("Can't connect to SpineOMatic servers for updates and downloads." & vbCrLf & _
-                        "This may be a temporary problem at Boston College." & vbCrLf & _
+                        MsgBox("Can't connect to SpineOMatic servers for updates and downloads." & vbCrLf &
+                        "This may be a temporary problem at Boston College." & vbCrLf &
                         "SpineOMatic may still work normally if this is the case.", MsgBoxStyle.Exclamation, "Web Update Error")
                     End If
                     Exit Do
@@ -605,6 +611,7 @@ Public Class Form1
         End If
 
     End Sub
+
     Private Function countBatch() As String
         Dim ln As Integer = -1
         Dim pos As Integer = 1
@@ -784,7 +791,7 @@ Public Class Form1
             If btnSL4.Checked Or btnSL6.Checked Or (btnPlCustom.Checked And PLcount.Value = 2) Then
                 If CType(plDistance.Text, Single) = 0.0 Then
                     plDistance.BackColor = Color.Pink
-                    MsgBox("When printing two pocket labels, you must specify a vertical distance" & vbCrLf & _
+                    MsgBox("When printing two pocket labels, you must specify a vertical distance" & vbCrLf &
                     "between the top lines of the two labels.", MsgBoxStyle.Exclamation, "No Distance Specified")
                     plDistance.Focus()
                     Exit Sub
@@ -820,7 +827,7 @@ Public Class Form1
         chkline = Split(OutputBox.Text, vbCrLf)
         If lencheck <> 99 Then
             'chkline = Split(OutputBox.Text, vbCrLf)
-            MsgBox("Line #" & lencheck & ":" & vbCrLf & chkline(lencheck - 1) & _
+            MsgBox("Line #" & lencheck & ":" & vbCrLf & chkline(lencheck - 1) &
             vbCrLf & " contains more than " & maxchars & " characters.")
             Exit Sub
         End If
@@ -876,83 +883,84 @@ Public Class Form1
             Exit Sub
         End If
 
-            If UseDesktop.Checked Then
-                getPrintParams()
-                PrintDocument2.PrinterSettings.PrinterName = inPrinterName.Text
-                PrintDocument2.PrintController = New System.Drawing.Printing.StandardPrintController
+        If UseDesktop.Checked Then
+            getPrintParams()
+            PrintDocument2.PrinterSettings.PrinterName = inPrinterName.Text
+            PrintDocument2.PrintController = New System.Drawing.Printing.StandardPrintController
 
+            If chkUsePocketLabels.Checked Then
+                labelin = packagePocket()
+                labelin = labelin.Replace(vbCrLf, "|")
+            Else
+                labelin = OutputBox.Text.Replace(vbCrLf, "|")
+            End If
+
+            'For desktop printing, only one label will be in the "LABELS" array,
+            'but the print routine always uses the LABELS array to get its input,
+            'for single label printing and for multi-label batch printing.
+            LABELS = labelin.Split(vbCrLf)
+
+            repeat = CType(LabelRepeat.Value, Integer)
+            If repeat > 1 And ManualPrint.Text <> "Stop Printing" Then
+                ManualPrint.Text = "Stop Printing"
+                printProgress.Visible = True
+                Application.DoEvents()
+            End If
+            For i = 1 To repeat
+                Application.DoEvents()
+                If stopPrinting Then
+                    SetPrintButtonText()
+                    stopPrinting = False
+                    printProgress.Visible = False
+                    Exit For
+                End If
+                Try
+                    printProgress.Text = "Printing " & i & " of" & repeat
+                    Application.DoEvents()
+                    PrintDocument2.Print()
+                Catch ex As Exception
+                    MsgBox("Printer settings are not correct." & vbCrLf &
+                    "Make sure a valid printer has been selected, and try again." &
+                    vbCrLf & ex.ToString, MsgBoxStyle.Exclamation, "Printer Selection Error")
+                    Exit For
+                End Try
+            Next i
+            '********************
+            SetPrintButtonText()
+            '********************
+            printProgress.Visible = False
+            nxt = 0
+            writeStat("P") 'add P to end of statrec and write to statfile.
+            OutputBox.Text = ""
+            plOutput.Text = ""
+            TempLabelBox.Text = ""
+            InputBox.Text = ""
+            InputBox.Focus()
+        Else
+            repeat = CType(LabelRepeat.Value, Integer)
+            If repeat > 5 AndAlso MessageBox.Show(repeat & " labels will be printed.", "Confirm Multipl Label Request", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) = Windows.Forms.DialogResult.Cancel Then Exit Sub
+            If UseLaser.Checked Then 'SAVE TO BATCH
                 If chkUsePocketLabels.Checked Then
-                    labelin = packagePocket()
-                    labelin = labelin.Replace(vbCrLf, "|")
+                    batchText = packagePocket()
                 Else
-                    labelin = OutputBox.Text.Replace(vbCrLf, "|")
+                    batchText = OutputBox.Text
                 End If
-
-                'For desktop printing, only one label will be in the "LABELS" array,
-                'but the print routine always uses the LABELS array to get its input,
-                'for single label printing and for multi-label batch printing.
-                LABELS = labelin.Split(vbCrLf)
-
-                repeat = CType(LabelRepeat.Value, Integer)
-                If repeat > 1 And ManualPrint.Text <> "Stop Printing" Then
-                    ManualPrint.Text = "Stop Printing"
-                    printProgress.Visible = True
-                    Application.DoEvents()
-                End If
+                repeat = LabelRepeat.Value
                 For i = 1 To repeat
-                    Application.DoEvents()
-                    If stopPrinting Then
-                        SetPrintButtonText()
-                        stopPrinting = False
-                        printProgress.Visible = False
-                        Exit For
-                    End If
-                    Try
-                        printProgress.Text = "Printing " & i & " of" & repeat
-                        Application.DoEvents()
-                        PrintDocument2.Print()
-                    Catch ex As Exception
-                        MsgBox("Printer settings are not correct." & vbCrLf & _
-                        "Make sure a valid printer has been selected, and try again." & _
-                        vbCrLf & ex.ToString, MsgBoxStyle.Exclamation, "Printer Selection Error")
-                        Exit For
-                    End Try
+                    sendToBatch2(batchText)
                 Next i
-                '********************
-                SetPrintButtonText()
-                '********************
-                printProgress.Visible = False
-                nxt = 0
-                writeStat("P") 'add P to end of statrec and write to statfile.
+                writeStat("B") 'add B to end of statrec and write to statfile
                 OutputBox.Text = ""
                 plOutput.Text = ""
                 TempLabelBox.Text = ""
                 InputBox.Text = ""
                 InputBox.Focus()
             Else
-                repeat = CType(LabelRepeat.Value, Integer)
-                If repeat > 5 AndAlso MessageBox.Show(repeat & " labels will be printed.", "Confirm Multipl Label Request", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) = Windows.Forms.DialogResult.Cancel Then Exit Sub
-                If UseLaser.Checked Then 'SAVE TO BATCH
-                    If chkUsePocketLabels.Checked Then
-                        batchText = packagePocket()
-                    Else
-                        batchText = OutputBox.Text
-                    End If
-                    repeat = LabelRepeat.Value
-                    For i = 1 To repeat
-                        sendToBatch2(batchText)
-                    Next i
-                    writeStat("B") 'add B to end of statrec and write to statfile
-                    OutputBox.Text = ""
-                    plOutput.Text = ""
-                    TempLabelBox.Text = ""
-                    InputBox.Text = ""
-                    InputBox.Focus()
-                Else
-                    ftpPrint()
-                End If
+                ftpPrint()
             End If
+        End If
     End Sub
+
     Private Function terminator(ByVal actualLen As Integer) As String
         Dim trm As String = ""
         Dim desiredLen As Integer = CType(dosBlankLines.Text, Integer)
@@ -1063,6 +1071,7 @@ Public Class Form1
             gapHeight = 0
         End If
     End Sub
+
     Private Sub sendToBatch(ByVal labelout As String)
         'add a spine label or book flag to the end of the selected label batch
         labelout = labelout.Replace(vbCrLf, "|")
@@ -1320,7 +1329,7 @@ Public Class Form1
             labelText = tr.ReadToEnd()
             tr.Close()
         Catch ex As Exception
-            MsgBox("Can't read Label batch #" & bnum & vbCrLf & _
+            MsgBox("Can't read Label batch #" & bnum & vbCrLf &
             "Reason: " & ex.Message, MsgBoxStyle.Exclamation, "Batch File Error")
             labelText = "*ERROR READING BATCH #" & bnum
         End Try
@@ -1441,8 +1450,8 @@ Public Class Form1
                 End If
 
                 If Not convertedXML.Contains("<chron_") Then
-                    Dim dummyChron = "</barcode>" & vbCrLf & "<chron_i> </chron_i>" & vbCrLf & _
-                    "<chron_j> </chron_j>" & vbCrLf & "<chron_k> </chron_k>" & vbCrLf & _
+                    Dim dummyChron = "</barcode>" & vbCrLf & "<chron_i> </chron_i>" & vbCrLf &
+                    "<chron_j> </chron_j>" & vbCrLf & "<chron_k> </chron_k>" & vbCrLf &
                     "<chron_l> </chron_l>" & vbCrLf & "<chron_m> </chron_m>" & vbCrLf
                     convertedXML = convertedXML.Replace("</barcode>", dummyChron)
                 End If
@@ -1455,7 +1464,7 @@ Public Class Form1
             End If
         Catch ex As Exception
             almaOK = False
-            OutputBox.Text = "***** ERROR ***** " & vbCrLf & "Can't retrieve XML file." & vbCrLf & vbCrLf & _
+            OutputBox.Text = "***** ERROR ***** " & vbCrLf & "Can't retrieve XML file." & vbCrLf & vbCrLf &
             "Error message: " & ex.Message
             'MsgBox("error: " & ex.Message)
         End Try
@@ -1463,6 +1472,7 @@ Public Class Form1
             getBarcodeFile()
         End If
     End Sub
+
     Private Function enumerate(ByVal xml As String, ByVal xfrom As String, ByVal xto As String, ByVal breakon As String)
         Dim k As Integer = 0
         Dim parseString As String = ""
@@ -1542,6 +1552,7 @@ Public Class Form1
 
         Return XML1 & vbCrLf & XML2
     End Function
+
     Private Function donothing(ByVal x As String)
         'MsgBox(RESTfulToSOAP(xmlReturned))
 
@@ -1586,6 +1597,7 @@ Public Class Form1
         'xmlReturned = xmlReturned.Replace("enumeration_", "enum_")
         Return x
     End Function
+
     Private Sub callJava()
         Dim resp As String
         Dim i As Integer = 0
@@ -1632,11 +1644,11 @@ Public Class Form1
             ermsg = proc.StandardError.ReadToEnd()
             If ermsg <> "" Then
                 If ermsg.Contains("find or load") Then
-                    Return "The Java application (" & javaClassName & ") was not found in " & vbCrLf & _
+                    Return "The Java application (" & javaClassName & ") was not found in " & vbCrLf &
                     "the SpineOMatic installation directory."
                 Else
-                    Return "An error occurred while trying to run the Java application (" & javaClassName & ")." & vbCrLf & _
-                    "Check the Alma Access credentials to make sure all values are entered correctly." & vbCrLf & vbCrLf & _
+                    Return "An error occurred while trying to run the Java application (" & javaClassName & ")." & vbCrLf &
+                    "Check the Alma Access credentials to make sure all values are entered correctly." & vbCrLf & vbCrLf &
                     "Error: " & ermsg
                 End If
             Else
@@ -1644,8 +1656,8 @@ Public Class Form1
             End If
         Catch ex As Exception
             If ex.Message.Contains("cannot find the file") Then
-                Return "Java is not installed, or is not accessible." & vbCrLf & _
-                "Please report this problem to your local" & vbCrLf & _
+                Return "Java is not installed, or is not accessible." & vbCrLf &
+                "Please report this problem to your local" & vbCrLf &
                 "systems support staff."
             End If
         End Try
@@ -1702,7 +1714,7 @@ Public Class Form1
                         Exit Do
                     End If
                 Else 'if this is not a "<" error, then give up.
-                    MsgBox("SpineOMatic cannot process the XML due to invalid characters in the data." & vbCrLf & _
+                    MsgBox("SpineOMatic cannot process the XML due to invalid characters in the data." & vbCrLf &
                     "The error returned is: " & vbCrLf & ex.ToString)
                     Exit Sub
                 End If
@@ -1780,6 +1792,7 @@ Public Class Form1
         If File.Exists(lastxml) = True Then File.Delete(lastxml)
         printCallNum()
     End Sub
+
     Private Sub getNodeList()
         batchPreview.Text = ""
         Dim nodelist As XmlNodeList
@@ -1791,6 +1804,7 @@ Public Class Form1
         Next
 
     End Sub
+
     Private Sub formatXML()
         'Makes the Current XML display look more like XML in the RichTextBox window.
         Dim pos As Integer = 0
@@ -1837,8 +1851,8 @@ Public Class Form1
             MsgBox("error: " & ex.ToString)
         End Try
     End Sub
-    Private Function StripControlChars(ByVal source As String, Optional ByVal KeepCRLF As _
-Boolean = True) As String
+
+    Private Function StripControlChars(ByVal source As String, Optional ByVal KeepCRLF As Boolean = True) As String
         ' we use this to build the result
         Dim sb As New System.Text.StringBuilder(source.Length)
         Dim index As Integer
@@ -1846,7 +1860,7 @@ Boolean = True) As String
             If Not Char.IsControl(source, index) Then
                 ' not a control char, so we can add to result
                 sb.Append(source.Chars(index))
-            ElseIf KeepCRLF AndAlso source.Substring(index, _
+            ElseIf KeepCRLF AndAlso source.Substring(index,
             2) = ControlChars.CrLf Then
                 ' it is a CRLF, and the user asked to keep it
                 sb.Append(source.Chars(index))
@@ -1956,8 +1970,8 @@ Boolean = True) As String
             checkcr = preLC & mainLC & issueLC
             OutputBox.Text = checkcr.Replace(vbCrLf & vbCrLf, vbCrLf) & otherLC
             origText = OutputBox.Text 'save text to later detect if it was manually changed
-            If dontConvert.Checked Then OutputBox.Text = "** VIEW RESTful XML ONLY **" & _
-            vbCrLf & vbCrLf & "Uncheck 'Don't Convert XML' in the Alma Access panel " & _
+            If dontConvert.Checked Then OutputBox.Text = "** VIEW RESTful XML ONLY **" &
+            vbCrLf & vbCrLf & "Uncheck 'Don't Convert XML' in the Alma Access panel " &
             "to restore normal operation."
         End If
 
@@ -1978,7 +1992,7 @@ Boolean = True) As String
             End If
             For i = 0 To checklines.Length - 1
                 If checklines(i).length > maxChars Then
-                    MsgBox("Line #" & i + 1 & ": " & checklines(i) & _
+                    MsgBox("Line #" & i + 1 & ": " & checklines(i) &
                     vbCrLf & " contains more than " & maxChars & " characters.")
                     charsOK = False
                 End If
@@ -1991,8 +2005,8 @@ Boolean = True) As String
             Try
                 CreatePocketLabel()
             Catch ex As Exception
-                MsgBox("User-defined pocket label error." & vbCrLf & _
-                "The maximum number of lines for XML field " & quot & ex.Message & quot & _
+                MsgBox("User-defined pocket label error." & vbCrLf &
+                "The maximum number of lines for XML field " & quot & ex.Message & quot &
 " must not be less than the minimum, and/or must not be zero.", MsgBoxStyle.Exclamation, "Custom Label Line Space Error")
                 Exit Sub
             End Try
@@ -2019,6 +2033,7 @@ Boolean = True) As String
         Next
         Return r 'if r returns with 99, all lines are OK.
     End Function
+
     Private Function Custom2(ByVal fields As String) As String
 
         If Trim(fields) = "" Then
@@ -2127,6 +2142,7 @@ Boolean = True) As String
         End If
         Return lbl
     End Function
+
     Private Function getFmt(ByVal arg As String) As Array
         'loop thru free text arg, storing initial format chars (~ # % ! ^) in 'fmt'
         'Removes quoted "prefix" text that may contain these characters.
@@ -2166,6 +2182,7 @@ Boolean = True) As String
         Next
         Return Split(fmt & "|" & qm, "|")
     End Function
+
     Private Function getPrefix(ByVal fmt As String) As String
         Dim quot As String = """"
         Dim a As Array
@@ -2173,6 +2190,7 @@ Boolean = True) As String
         a = fmt.Split(quot) 'splitting on quots puts the contents in element #1 (0 and 2 have the quots)
         Return a(1) 'return the text string between the quots.
     End Function
+
     Private Function CreateFlagSlip() As String
         Dim i As Integer = 0
         Dim custom_field As String = ""
@@ -2212,6 +2230,7 @@ Boolean = True) As String
         Next
         Return bc & vbCrLf & lname & vbCrLf & cn & vbCrLf & itm & vbCrLf & titl
     End Function
+
     Private Sub CreatePocketLabel()
         Dim plValues As Array
         Dim plParam As Array
@@ -2271,6 +2290,7 @@ Boolean = True) As String
         wrapping = False
         indenting = False
     End Sub
+
     Private Function PocketParams() As Array
         Dim plParam As Array
         If btnSLB.Checked Then
@@ -2285,9 +2305,9 @@ Boolean = True) As String
                     plParam = Split("<call_number>;2;2|<author>;2;3|<title>;1;3", "|")
                     labelCount = 2
                 Else
-                    plParam = Split(plSrc1.Text & ";" & plMin1.Text & ";" & plMax1.Text & "|" & _
-                    plSrc2.Text & ";" & plMin2.Text & ";" & plMax2.Text & "|" & _
-                    plSrc3.Text & ";" & plMin3.Text & ";" & plMax3.Text & "|" & _
+                    plParam = Split(plSrc1.Text & ";" & plMin1.Text & ";" & plMax1.Text & "|" &
+                    plSrc2.Text & ";" & plMin2.Text & ";" & plMax2.Text & "|" &
+                    plSrc3.Text & ";" & plMin3.Text & ";" & plMax3.Text & "|" &
                     plSrc4.Text & ";" & plMin4.Text & ";" & plMax4.Text, "|")
                     labelCount = PLcount.Value
                 End If
@@ -2295,6 +2315,7 @@ Boolean = True) As String
         End If
         Return plParam
     End Function
+
     Private Function HexString(ByVal EvalString As String) As String
         Dim intStrLen As Integer
         Dim intLoop As Integer
@@ -2307,6 +2328,7 @@ Boolean = True) As String
         Next
         HexString = strHex
     End Function
+
     Private Function wrap(ByVal textline As String, Optional ByVal useCharCount As Integer = 0) As String
         'wrap a string to the label width [if no useCharCount is passed to this routine]
         'wrap a string to a specified number of characters if useCharCount is provided]
@@ -2391,6 +2413,7 @@ Boolean = True) As String
         b.Dispose()
         Return mywidth
     End Function
+
     Function cleanup(ByVal callout As String) As String
         callout = callout.Replace(vbCrLf & " ", vbCrLf)
         callout = callout.Replace(vbCrLf & vbCrLf, vbCrLf)
@@ -2494,7 +2517,7 @@ Boolean = True) As String
 
         cutter = cn.Substring(pos - 1) 'trim off the rest of the cn and put it in the cutter var.
         'if cutter starts with a space or punctuation other than a decimal, remove it
-        If Mid$(cutter, 1, 1) = " " Or _
+        If Mid$(cutter, 1, 1) = " " Or
         (Char.IsPunctuation(Mid$(cutter, 1, 1)) And Not Mid$(cutter, 1, 1) = ".") Then
             cutter = cutter.Substring(1)
         End If
@@ -2655,6 +2678,7 @@ Boolean = True) As String
         callout = cleanup(callout)
         Return callout
     End Function
+
     Private Function groupSplit(ByVal cn As String) As String
         Dim pos As Integer
         Dim newcn As String = ""
@@ -2753,6 +2777,7 @@ Boolean = True) As String
 
         Return callout
     End Function
+
     Private Function parseOther(ByVal cn As String)
         Dim callout As String = ""
         Dim i As Integer = 0
@@ -2827,6 +2852,7 @@ Boolean = True) As String
         Loop While i < done - 2
         Return cn
     End Function
+
     Private Function getParsing2(ByVal xmlsource As String) As String
         Dim callout As String = ""
         Dim buildLC As String = ""
@@ -2970,6 +2996,7 @@ Boolean = True) As String
 
         Return c
     End Function
+
     Private Function IsYear(ByVal c As String, ByVal i As Integer) As Boolean
         'c is the string containing the cutter
         'i is the position in c of the first character that might or might not be the first digit of a year.
@@ -2980,6 +3007,7 @@ Boolean = True) As String
             Return False
         End If
     End Function
+
     Private Function aboveCall(ByVal libname As String, ByVal liblocation As String) As String
         Dim labeltext As String = ""
         Dim listentry As String = ""
@@ -3066,7 +3094,7 @@ Boolean = True) As String
                 itm = sr.ReadLine()
             End While
         Catch ex As Exception
-            MsgBox("The file '" & ALTfile & "' could not be found." & _
+            MsgBox("The file '" & ALTfile & "' could not be found." &
             vbCrLf & "Reason: " & ex.Message)
         End Try
 
@@ -3094,7 +3122,7 @@ Boolean = True) As String
             sw.Close()
 
         Catch ex As IOException
-            MsgBox("error writing to file: " & fpath & vbCrLf & _
+            MsgBox("error writing to file: " & fpath & vbCrLf &
             ex.ToString)
         End Try
     End Sub
@@ -3159,7 +3187,7 @@ Boolean = True) As String
         Do
             labelTop = Top
             For t = curline To lastLine
-                labelcmds = labelcmds & "T " & LMar.ToString & "," & labelTop.ToString & "," & _
+                labelcmds = labelcmds & "T " & LMar.ToString & "," & labelTop.ToString & "," &
                 "0," & Fontnum & "," & "pt" & Fontsize & ";" & tline(t)
                 If t < tline.Length - 1 Then labelcmds = labelcmds & vbCrLf
                 labelTop = labelTop + Inc
@@ -3231,7 +3259,7 @@ Boolean = True) As String
                 Exit Sub
             End Try
             If batchtext.ToUpper.Contains("PAUSE") Or batchtext.ToUpper.Contains("PATHNAME") Then
-                MsgBox("This batch file cannot in run in hidden mode because it contains 'pause' or 'PathName' commands " & _
+                MsgBox("This batch file cannot in run in hidden mode because it contains 'pause' or 'PathName' commands " &
                 "that will require a user response.", MsgBoxStyle.Exclamation, "Hidden Mode Error")
                 Exit Sub
             End If
@@ -3260,6 +3288,7 @@ Boolean = True) As String
         End Try
 
     End Sub
+
     Private Sub InputBox_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles InputBox.DragDrop
         Dim temptext As String = ""
         If e.Data.GetDataPresent(DataFormats.Text) Then
@@ -3285,9 +3314,11 @@ Boolean = True) As String
     Private Sub InputBox_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles InputBox.GotFocus
         InputBox.BackColor = Color.FromArgb(220, 255, 220)
     End Sub
+
     Private Sub InputBox_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles InputBox.LostFocus
         InputBox.BackColor = Color.FromArgb(255, 220, 220)
     End Sub
+
     Private Sub InputBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles InputBox.KeyPress
 
         If e.KeyChar = ControlChars.Cr Then
@@ -3383,6 +3414,7 @@ Boolean = True) As String
             InputBox.Focus()
         End If
     End Sub
+
     Private Sub UseLaser_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UseLaser.CheckedChanged
         If UseLaser.Checked Then
             refreshFTP()
@@ -3400,6 +3432,7 @@ Boolean = True) As String
             InputBox.Focus()
         End If
     End Sub
+
     Private Sub UseFTP_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UseFTP.CheckedChanged
         If UseFTP.Checked Then
 
@@ -3418,6 +3451,7 @@ Boolean = True) As String
             InputBox.Focus()
         End If
     End Sub
+
     Private Sub refreshFTP()
         If chkUsePocketLabels.Checked And UseFTP.Checked Then
             FTPwarning.Visible = True
@@ -3541,9 +3575,11 @@ Boolean = True) As String
     Private Sub SaveSettingsButn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveSettingsButn.Click
         saveSettings("todisk")
     End Sub
+
     Private Sub LoadSettingsButn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadSettingsButn.Click
         GetSettingsFile()
     End Sub
+
     Private Sub GetSettingsFile()
         TextBox24.ForeColor = Color.Red
         TextBox24.Text = "LOADING SETTINGS..."
@@ -3856,7 +3892,7 @@ Boolean = True) As String
             versionList = webClient.DownloadString(webRequest)
         Catch ex As Exception
             msgStyle = Microsoft.VisualBasic.MsgBoxStyle.Exclamation
-            result = "ERROR--Could not get the version information from the Web." & vbCrLf & _
+            result = "ERROR--Could not get the version information from the Web." & vbCrLf &
             "Check the update path to make sure it's valid." & ex.Message
             getExe = False
             MsgBox(result, msgStyle, "SpineOMatic Download")
@@ -3880,7 +3916,7 @@ Boolean = True) As String
         Next
 
         If pv <> "" And somVersion <> pv Then   'if a preferred version is found, and it's not the version we're running
-            Dim box = MessageBox.Show("You are running version " & somVersion & ", but" & vbCrLf & _
+            Dim box = MessageBox.Show("You are running version " & somVersion & ", but" & vbCrLf &
             "the preferred version is " & pv & vbCrLf & "Do you want to download it now?", "Download Decision", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If box = box.No Then
                 result = "A new version of SpineOMatic will not be downloaded at this time."
@@ -3907,7 +3943,7 @@ Boolean = True) As String
         If OKtoRename Then
             My.Computer.FileSystem.RenameFile(mypath & "SpineLabeler.exe", "SpineLabeler-" & somVersion.Replace(".", "_") & ".exe")
             My.Computer.FileSystem.RenameFile(mypath & exename & ".exe", "SpineLabeler.exe")
-            result = "SpineOMatic version " & pv & " has been downloded." & vbCrLf & _
+            result = "SpineOMatic version " & pv & " has been downloded." & vbCrLf &
             "You must close and restart SpineOMatic to begin using the new version."
         End If
 
@@ -3930,7 +3966,7 @@ Boolean = True) As String
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Dim box2 = MessageBox.Show("Click OK to empty batch file #" & batchNumber.Value & ", or " & vbCrLf & _
+        Dim box2 = MessageBox.Show("Click OK to empty batch file #" & batchNumber.Value & ", or " & vbCrLf &
         "click CANCEL to keep the file.", "Confirm File Clear", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
         If box2 = box2.OK Then
             writeFile(mypath & "labelbatch" & batchNumber.Value & ".txt", "", False)
@@ -3969,7 +4005,7 @@ Boolean = True) As String
         writeFile(mypath & "sendlabel.txt", batContents, False)
 
         If Not File.Exists(mypath & "viados.bat") Then
-            batContents = "REM Sample batch file displays label text" & vbCrLf & "REM in Windows Notepad" & vbCrLf & _
+            batContents = "REM Sample batch file displays label text" & vbCrLf & "REM in Windows Notepad" & vbCrLf &
             "start notepad.exe label.txt" & vbCrLf
             writeFile(mypath & "viados.bat", batContents, False)
         End If
@@ -3988,6 +4024,7 @@ Boolean = True) As String
         'writeFile(mypath & "getalmadiag.bat", batContents, False)
 
     End Sub
+
     Private Sub webDownload(ByVal fname As String, ByVal ftype As String, ByVal webPath As String, ByVal fdest As String)
         Dim webrequest As String = ""
         Dim webClient As New System.Net.WebClient
@@ -4006,8 +4043,8 @@ Boolean = True) As String
         Catch ex As Exception
             success = False
             If ex.Message.Contains("407") Then
-                MsgBox("Your proxy server is not allowing you to connect to the BC server:" & vbCrLf & vbCrLf & _
-                webPath & vbCrLf & vbCrLf & _
+                MsgBox("Your proxy server is not allowing you to connect to the BC server:" & vbCrLf & vbCrLf &
+                webPath & vbCrLf & vbCrLf &
                 "Ask your IT Networking office to allow access to ('whitelist') this server.", MsgBoxStyle.Exclamation, "Proxy Server Block")
             End If
             MsgBox(fname & "- Download error: " & ex.Message)
@@ -4041,8 +4078,8 @@ Boolean = True) As String
         Catch ex As Exception
             altURL.BackColor = Color.Pink
             msgStyle = Microsoft.VisualBasic.MsgBoxStyle.Exclamation
-            MsgBox("ERROR -- The 'aboveLabel.txt' file could not be downloaded from " & _
-            webRequest & _
+            MsgBox("ERROR -- The 'aboveLabel.txt' file could not be downloaded from " &
+            webRequest &
             vbCrLf & "Reason: " & ex.Message, msgStyle, "AboveLabelText File Download")
             Exit Sub
         End Try
@@ -4149,7 +4186,7 @@ Boolean = True) As String
             writeFile(mypath & "license.txt", acceptmsg & licenseAgreement.Text, False)
             Process.Start(mypath & "license.txt")
         Catch ex As Exception
-            MsgBox("An error occurred while trying to display the license text in Notepad." & vbCrLf & _
+            MsgBox("An error occurred while trying to display the license text in Notepad." & vbCrLf &
             "Error message: " & ex.Message, MsgBoxStyle.Exclamation, "License Display Error")
         End Try
     End Sub
@@ -4207,8 +4244,8 @@ Boolean = True) As String
             btnMonitor.Enabled = False
         Else
             MsgBox("The directory " & vbCrLf & XMLPath.Text _
-            & vbCrLf & "does not exist." & _
-            vbCrLf & "Enter the name of an existing directory.", _
+            & vbCrLf & "does not exist." &
+            vbCrLf & "Enter the name of an existing directory.",
             MsgBoxStyle.Exclamation, "Directory Monitor")
             XMLPath.Focus()
         End If
@@ -4233,7 +4270,6 @@ Boolean = True) As String
                 Beep()           'and beep
             End If
         End If
-
     End Sub
 
     Private Function obscure(ByVal txtin As String) As String
@@ -4257,7 +4293,7 @@ Boolean = True) As String
                 btn_saveALT.ForeColor = Color.Red
             Else
                 Beep()
-                MsgBox("Each entry must contain a plus sign (+) and an equal sign (=) following " & vbCrLf & _
+                MsgBox("Each entry must contain a plus sign (+) and an equal sign (=) following " & vbCrLf &
                 "the Library name and the Location name, respectively.", MsgBoxStyle.Exclamation, "Missing + or = Signs")
                 altText.Focus()
             End If
@@ -4298,7 +4334,7 @@ Boolean = True) As String
                 btn_saveALT.ForeColor = Color.Red
             Else
                 Beep()
-                MsgBox("Each entry must contain a plus sign (+) and an equal sign (=) following " & vbCrLf & _
+                MsgBox("Each entry must contain a plus sign (+) and an equal sign (=) following " & vbCrLf &
                 "the Library name and the Location name, respectively.", MsgBoxStyle.Exclamation, "Missing + or = Signs")
                 altText.Focus()
             End If
@@ -4326,8 +4362,8 @@ Boolean = True) As String
         writeFile(fname, filetext, False)
         Application.DoEvents()
         loadLabelText()
-
     End Sub
+
     Private Sub hideALTedit()
         Label44.Visible = False
         Label54.Visible = False
@@ -4338,6 +4374,7 @@ Boolean = True) As String
         btn_saveALT.Visible = False
         altText.Visible = False
     End Sub
+
     Private Sub showALTedit()
         Label44.Visible = True
         Label54.Visible = True
@@ -4357,7 +4394,7 @@ Boolean = True) As String
             showALTedit()
         Else
             If madeALTchanges = True Then
-                Dim box = MessageBox.Show("Changes to your local label text file have not been saved." & vbCrLf & _
+                Dim box = MessageBox.Show("Changes to your local label text file have not been saved." & vbCrLf &
                 "Do you want to save them now?", "Save Settings", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If box = box.Yes Then
                     btn_saveALT.PerformClick()
@@ -4407,15 +4444,15 @@ Boolean = True) As String
         Dim parse As String = ""
         If useExlibrisParsing.Checked Then parse = "ExL" Else parse = "SoM"
         Try
-            statrec = dt & vbTab & _
-            tm & vbTab & _
-            station.Text & vbTab & _
-            usrname.Text & vbTab & _
-            lastbc & vbTab & _
-            parse & vbTab & _
-            cntype & vbTab & _
-            almaReturnCode & vbTab & _
-            almaLibrary & vbTab & _
+            statrec = dt & vbTab &
+            tm & vbTab &
+            station.Text & vbTab &
+            usrname.Text & vbTab &
+            lastbc & vbTab &
+            parse & vbTab &
+            cntype & vbTab &
+            almaReturnCode & vbTab &
+            almaLibrary & vbTab &
             almaLocation
         Catch ex As Exception
             MsgBox("Error writing statistics record --" & ex.Message)
@@ -4639,12 +4676,11 @@ Boolean = True) As String
         End If
     End Sub
 
-
     Private Sub radio_useSystem_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radio_useSystem.CheckedChanged
         If settingsLoaded = False Then Exit Sub
         If radio_useSystem.Checked Then
             If altURL.Text = "" Then
-                MsgBox("To use the system file, provide a URL to the web folder" & vbCrLf & _
+                MsgBox("To use the system file, provide a URL to the web folder" & vbCrLf &
                 "where the 'aboveLabel.txt' file can be found, and click 'Download'.", MsgBoxStyle.Information, "Use System File")
                 altURL.BackColor = Color.Yellow
                 altURL.Focus()
@@ -4680,6 +4716,7 @@ Boolean = True) As String
             Exit Sub
         End Try
     End Sub
+
     Private Sub logByHostname()
         Dim fs As FileStream
         Dim sr As StreamReader
@@ -4767,6 +4804,7 @@ Boolean = True) As String
             CustomText.Enabled = False
         End If
     End Sub
+
     Private Sub SaveDefaults(ByVal t As TextBox)
         t.Text = inTopMargin.Text
         t.Text = t.Text & "|" & inLeftMargin.Text
@@ -4818,7 +4856,7 @@ Boolean = True) As String
             End If
         Catch ex As Exception
             If ex.Message.Contains("cannot find the file") Then
-                Return "Java is not installed, or is not accessible." & vbCrLf & vbCrLf & _
+                Return "Java is not installed, or is not accessible." & vbCrLf & vbCrLf &
                 "Please report this problem to your local systems support staff."
             End If
         End Try
@@ -4866,6 +4904,7 @@ Boolean = True) As String
         'MsgBox(host.HostName & vbCrLf & vbCrLf & locxml)
         Return xfield
     End Function
+
     Private Function getLatLong(ByVal ip As String) As String
         Dim webclient As New System.Net.WebClient
         Dim locxml As String = ""
@@ -4881,8 +4920,8 @@ Boolean = True) As String
             locxml = webclient.DownloadString("http://www.telize.com/geoip/" & ip)
             locxml = locxml.Replace("{", "").Replace("}", ",")
 
-            xfield = getjson("latitude", locxml) & "|" & getjson("longitude", locxml) & _
-            "|" & getjson("country", locxml) & "|" & getjson("region", locxml) & "|" & _
+            xfield = getjson("latitude", locxml) & "|" & getjson("longitude", locxml) &
+            "|" & getjson("country", locxml) & "|" & getjson("region", locxml) & "|" &
             getjson("city", locxml) & "|" & getjson("isp", locxml)
         Catch ex As Exception
             MsgBox("Unable to connect to server" & vbCrLf & "Error: " & ex.Message)
@@ -4893,7 +4932,7 @@ Boolean = True) As String
 
         Return xfield
     End Function
- 
+
     Private Function getjson(ByVal lookup As String, ByVal json As String)
         Dim quot = """"
         Dim pos As Integer = 0
@@ -4906,6 +4945,7 @@ Boolean = True) As String
         End If
         Return "unknown"
     End Function
+
     Private Function BTween(ByVal t As String, ByVal a As String, ByVal b As String) As String
         Dim pos1, pos2 As Integer
         Dim len_a As Integer = a.Length
@@ -4914,6 +4954,7 @@ Boolean = True) As String
         If pos1 = -1 Or pos2 = -1 Then Return "?"
         Return t.Substring(pos1, pos2 - pos1)
     End Function
+
     Private Function xmlValue(ByVal node_in) As String
         Dim xfield As String = ""
         Dim prefix As String = ""
@@ -4941,7 +4982,7 @@ Boolean = True) As String
                 End If
 
                 If chkXMLWarning.Checked Then
-                    MsgBox(er & vbCrLf & vbCrLf & _
+                    MsgBox(er & vbCrLf & vbCrLf &
                     "Check and correct the value.", MsgBoxStyle.Exclamation, "Invalid XML Field Name")
                 Else
                     lblXMLWarn.Visible = True
@@ -4954,11 +4995,13 @@ Boolean = True) As String
         'MsgBox("xfield returned:" & xfield.Replace("|amp", "&").Replace("|lt;", "<"))
         Return xfield.Replace("|amp", "&").Replace("&amp;", "&").Replace("|lt;", "<")
     End Function
+
     Private Sub getnodes()
         For Each node As XmlNode In xdoc.SelectNodes("/printout/section-01/physical_item_display_for_printing/*")
 
         Next
     End Sub
+
     Private Sub Spine_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Spine.CheckedChanged
         If Not settingsLoaded Then Exit Sub
         If Spine.Checked Then
@@ -5015,6 +5058,7 @@ Boolean = True) As String
             customNonFlagDefaultLoaded = True
         End If
     End Sub
+
     Private Sub chkUsePocketLabels_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkUsePocketLabels.CheckedChanged
         If Not settingsLoaded Then Exit Sub
         If chkUsePocketLabels.Checked Then
@@ -5123,6 +5167,7 @@ Boolean = True) As String
     Private Sub lcDecimalBreakB4_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lcDecimalBreakB4.CheckedChanged
         btnTestParser.PerformClick()
     End Sub
+
     Private Sub lcNoDecimalBreak_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lcNoDecimalBreak.CheckedChanged
         btnTestParser.PerformClick()
     End Sub
@@ -5475,7 +5520,7 @@ Boolean = True) As String
         Try
             Clipboard.SetText(statsOut.Text)
         Catch ex As Exception
-            MsgBox("An error occurred when copying text to the Windows clipboard." & vbCrLf & vbCrLf & _
+            MsgBox("An error occurred when copying text to the Windows clipboard." & vbCrLf & vbCrLf &
             "Error: " & ex.Message, MsgBoxStyle.Exclamation, "Clipboard Error")
             Exit Sub
         End Try
@@ -5498,7 +5543,7 @@ Boolean = True) As String
                 settingsText = "*** Settings ***" & vbCrLf & vbCrLf & settingsText
                 tr.Close()
             Catch somEx As Exception
-                MsgBox("Error reading 'settings.som' file." & vbCrLf & vbCrLf & _
+                MsgBox("Error reading 'settings.som' file." & vbCrLf & vbCrLf &
                 "Error: " & somEx.Message, MsgBoxStyle.Exclamation, "Settings File Read Error")
                 settingsText = vbCrLf & vbCrLf & "************** Error reading settings file ****************"
             End Try
@@ -5514,7 +5559,7 @@ Boolean = True) As String
         Try
             Clipboard.SetText(copyXmlHdr & RichTextBox1.Text.Replace(vbLf, vbCrLf) & vbCrLf & vbCrLf & settingsText)
         Catch ex As Exception
-            MsgBox("An error occurred when copying text to the Windows clipboard." & vbCrLf & vbCrLf & _
+            MsgBox("An error occurred when copying text to the Windows clipboard." & vbCrLf & vbCrLf &
             "Error: " & ex.Message, MsgBoxStyle.Exclamation, "Clipboard Error")
             Exit Sub
         End Try
@@ -5807,8 +5852,8 @@ Boolean = True) As String
 
     Private Sub dontConvert_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dontConvert.CheckedChanged
         If dontConvert.Checked = True Then
-            MsgBox("Caution--Check this box only to enable viewing the RESTful XML file in " & _
-            "the 'Current XML' panel. The RESTful XML must be converted to the older (Java) " & _
+            MsgBox("Caution--Check this box only to enable viewing the RESTful XML file in " &
+            "the 'Current XML' panel. The RESTful XML must be converted to the older (Java) " &
             "format in order for SpineOMatic to function.", MsgBoxStyle.Information, "Warning")
         End If
     End Sub
