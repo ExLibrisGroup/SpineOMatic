@@ -1364,7 +1364,7 @@ Public Class Form1
             svcRequest = svcRequest & "barcode=" & InputBox.Text
         Else
             If UseRestfulApi.Checked Then
-                fixedBarcode = Replace(InputBox.Text, "+", "%2B")
+                fixedBarcode = Replace(Trim(InputBox.Text), "+", "%2B")
                 svcRequest = apiURL.Text & apiMethod.Text.Replace("{item_barcode}", fixedBarcode) & "&apikey=" & apiKey.Text
             End If
         End If
