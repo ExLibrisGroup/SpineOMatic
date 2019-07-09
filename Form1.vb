@@ -1364,7 +1364,7 @@ Public Class Form1
             svcRequest = svcRequest & "barcode=" & InputBox.Text
         Else
             If UseRestfulApi.Checked Then
-                fixedBarcode = Replace(InputBox.Text, "+", "%2B")
+                fixedBarcode = Replace(Trim(InputBox.Text), "+", "%2B")
                 svcRequest = apiURL.Text & apiMethod.Text.Replace("{item_barcode}", fixedBarcode) & "&apikey=" & apiKey.Text
             End If
         End If
@@ -1802,6 +1802,8 @@ Public Class Form1
         Dim endname As String = ""
         Dim sp As Integer = 0
         Dim ep As Integer = 0
+        Dim currentSelectionFont As Font
+
         Try
             With RichTextBox1
                 While True
@@ -1823,12 +1825,17 @@ Public Class Form1
                     nextend = .Find(">", nextclose, RichTextBoxFinds.MatchCase)
                     endname = Mid$(.Text, nextclose + 1, nextend - nextclose + 1)
                     If tagname = endname.Replace("/", "") Then
+                        'For RichTextBox.SelectionFont Property:
+                        'If the current text selection has more than one font specified, the property SelectionFont is null,
+                        'so we use a variable to hold the current one SelectionFont.
+                        currentSelectionFont = RichTextBox1.SelectionFont
+
                         sp = tagend + 1
                         ep = nextclose - 1
                         .SelectionStart = sp
                         .SelectionLength = ep - sp + 1
                         .SelectionColor = Color.Black
-                        .SelectionFont = New Font(Me.RichTextBox1.SelectionFont, FontStyle.Bold)
+                        .SelectionFont = New Font(currentSelectionFont, FontStyle.Bold)
                     End If
                     tagstart = tagstart + 1
                 End While
