@@ -19,7 +19,7 @@ Credentials to access the Alma Label Print Web Service, including the path to th
 
 ## Installation Instructions
 
-Download [`SpineLabeler.exe`](https://github.com/BCLibraries/SpineOMatic/releases/tag/v7.0.0) into an empty directory. Click the application to launch.
+Download [`SpineLabeler.exe`](https://github.com/ExLibrisGroup/SpineOMatic/releases/tag/v7.0.0) into an empty directory. Click the application to launch.
 
 The User's Manual can also be downloaded and viewed from SpineOMatic's "About" box. It contains a Quick Start guide that will help you get SpineOMatic installed quickly and easily.
 
