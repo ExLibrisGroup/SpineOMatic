@@ -19,495 +19,468 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.OutputBox = New System.Windows.Forms.TextBox
-        Me.ManualPrint = New System.Windows.Forms.Button
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.ReviewBox = New System.Windows.Forms.RadioButton
-        Me.AutoPrintBox = New System.Windows.Forms.RadioButton
-        Me.TabControl1 = New System.Windows.Forms.TabControl
-        Me.TabPage1 = New System.Windows.Forms.TabPage
-        Me.viaDOSPanel = New System.Windows.Forms.Panel
-        Me.viadosCaution = New System.Windows.Forms.Label
-        Me.Panel17 = New System.Windows.Forms.Panel
-        Me.appendAscii = New System.Windows.Forms.TextBox
-        Me.dosUseFF = New System.Windows.Forms.RadioButton
-        Me.dosAddLines = New System.Windows.Forms.RadioButton
-        Me.dosBlankLines = New System.Windows.Forms.TextBox
-        Me.Label115 = New System.Windows.Forms.Label
-        Me.Label120 = New System.Windows.Forms.Label
-        Me.Label122 = New System.Windows.Forms.Label
-        Me.dosParam2 = New System.Windows.Forms.TextBox
-        Me.dosParam1 = New System.Windows.Forms.TextBox
-        Me.batsignal = New System.Windows.Forms.Label
-        Me.loadViados = New System.Windows.Forms.Button
-        Me.hideDosWindow = New System.Windows.Forms.CheckBox
-        Me.Label119 = New System.Windows.Forms.Label
-        Me.Label118 = New System.Windows.Forms.Label
-        Me.dosPlTabNum = New System.Windows.Forms.TextBox
-        Me.dosPlColNum = New System.Windows.Forms.TextBox
-        Me.dosPlUseTab = New System.Windows.Forms.RadioButton
-        Me.dosPlUseCol = New System.Windows.Forms.RadioButton
-        Me.Label117 = New System.Windows.Forms.Label
-        Me.Label114 = New System.Windows.Forms.Label
-        Me.batchDisplay = New System.Windows.Forms.TextBox
-        Me.viadosSave = New System.Windows.Forms.Button
-        Me.useDOSBatch = New System.Windows.Forms.CheckBox
-        Me.FTPwarning = New System.Windows.Forms.Label
-        Me.Label72 = New System.Windows.Forms.Label
-        Me.showLabelType = New System.Windows.Forms.Label
-        Me.orientationPanel = New System.Windows.Forms.Panel
-        Me.usePortrait = New System.Windows.Forms.RadioButton
-        Me.useLandscape = New System.Windows.Forms.RadioButton
-        Me.marginPanel = New System.Windows.Forms.Panel
-        Me.inUnits1 = New System.Windows.Forms.Label
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.inTopMargin = New System.Windows.Forms.TextBox
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.inLeftMargin = New System.Windows.Forms.TextBox
-        Me.Label26 = New System.Windows.Forms.Label
-        Me.inLineSpacing = New System.Windows.Forms.TextBox
-        Me.Label35 = New System.Windows.Forms.Label
-        Me.UseLaser = New System.Windows.Forms.RadioButton
-        Me.inMaxLines = New System.Windows.Forms.TextBox
-        Me.inMaxChars = New System.Windows.Forms.TextBox
-        Me.UseFTP = New System.Windows.Forms.RadioButton
-        Me.Label24 = New System.Windows.Forms.Label
-        Me.Label25 = New System.Windows.Forms.Label
-        Me.UseDesktop = New System.Windows.Forms.RadioButton
-        Me.FTPGroup = New System.Windows.Forms.GroupBox
-        Me.ftpRegisterMsg = New System.Windows.Forms.Label
-        Me.btn_ftpRegister = New System.Windows.Forms.Button
-        Me.ftpArrow = New System.Windows.Forms.Label
-        Me.FTPInfo = New System.Windows.Forms.Label
-        Me.Label50 = New System.Windows.Forms.Label
-        Me.FTPHelp = New System.Windows.Forms.Label
-        Me.Label49 = New System.Windows.Forms.Label
-        Me.FTPPassword = New System.Windows.Forms.TextBox
-        Me.Label48 = New System.Windows.Forms.Label
-        Me.FTPLogin = New System.Windows.Forms.TextBox
-        Me.Label46 = New System.Windows.Forms.Label
-        Me.FTPip = New System.Windows.Forms.TextBox
-        Me.Label30 = New System.Windows.Forms.Label
-        Me.Label16 = New System.Windows.Forms.Label
-        Me.TextBox23 = New System.Windows.Forms.TextBox
-        Me.TextBox22 = New System.Windows.Forms.TextBox
-        Me.TextBox21 = New System.Windows.Forms.TextBox
-        Me.TextBox20 = New System.Windows.Forms.TextBox
-        Me.TextBox19 = New System.Windows.Forms.TextBox
-        Me.Label22 = New System.Windows.Forms.Label
-        Me.Label21 = New System.Windows.Forms.Label
-        Me.Label20 = New System.Windows.Forms.Label
-        Me.Label19 = New System.Windows.Forms.Label
-        Me.Label18 = New System.Windows.Forms.Label
-        Me.Label17 = New System.Windows.Forms.Label
-        Me.TextBox17 = New System.Windows.Forms.TextBox
-        Me.DesktopGroup = New System.Windows.Forms.GroupBox
-        Me.Label12 = New System.Windows.Forms.Label
-        Me.btnBCFontDialog = New System.Windows.Forms.Button
-        Me.inBCFontWeight = New System.Windows.Forms.CheckBox
-        Me.Label29 = New System.Windows.Forms.Label
-        Me.inBCFontSize = New System.Windows.Forms.TextBox
-        Me.inBCFontName = New System.Windows.Forms.TextBox
-        Me.SheetSettings = New System.Windows.Forms.Panel
-        Me.Label121 = New System.Windows.Forms.Label
-        Me.inUnits2 = New System.Windows.Forms.Label
-        Me.Label11 = New System.Windows.Forms.Label
-        Me.inStartCol = New System.Windows.Forms.TextBox
-        Me.inStartRow = New System.Windows.Forms.TextBox
-        Me.Label31 = New System.Windows.Forms.Label
-        Me.Label32 = New System.Windows.Forms.Label
-        Me.batchEntries = New System.Windows.Forms.Label
-        Me.Label43 = New System.Windows.Forms.Label
-        Me.batchNumber = New System.Windows.Forms.NumericUpDown
-        Me.batchPreview = New System.Windows.Forms.TextBox
-        Me.Button2 = New System.Windows.Forms.Button
-        Me.btnPrintBatch = New System.Windows.Forms.Button
-        Me.Label42 = New System.Windows.Forms.Label
-        Me.inGapHeight = New System.Windows.Forms.TextBox
-        Me.inGapWidth = New System.Windows.Forms.TextBox
-        Me.inLabelHeight = New System.Windows.Forms.TextBox
-        Me.inLabelWidth = New System.Windows.Forms.TextBox
-        Me.inLabelCols = New System.Windows.Forms.TextBox
-        Me.inLabelRows = New System.Windows.Forms.TextBox
-        Me.Label41 = New System.Windows.Forms.Label
-        Me.Label40 = New System.Windows.Forms.Label
-        Me.Label39 = New System.Windows.Forms.Label
-        Me.Label38 = New System.Windows.Forms.Label
-        Me.Label37 = New System.Windows.Forms.Label
-        Me.Label36 = New System.Windows.Forms.Label
-        Me.inFontWeight = New System.Windows.Forms.CheckBox
-        Me.Label23 = New System.Windows.Forms.Label
-        Me.inFontSize = New System.Windows.Forms.TextBox
-        Me.FontDialogButn = New System.Windows.Forms.Button
-        Me.inFontName = New System.Windows.Forms.TextBox
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.PrinterDialogButn = New System.Windows.Forms.Button
-        Me.inPrinterName = New System.Windows.Forms.TextBox
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label15 = New System.Windows.Forms.Label
-        Me.TabPage2 = New System.Windows.Forms.TabPage
-        Me.PocketLabelPanel = New System.Windows.Forms.Panel
-        Me.plUnits2 = New System.Windows.Forms.Label
-        Me.plUnits1 = New System.Windows.Forms.Label
-        Me.userDefinedPanel = New System.Windows.Forms.Panel
-        Me.Label96 = New System.Windows.Forms.Label
-        Me.plMax4 = New System.Windows.Forms.TextBox
-        Me.plMax3 = New System.Windows.Forms.TextBox
-        Me.plMax2 = New System.Windows.Forms.TextBox
-        Me.plMax1 = New System.Windows.Forms.TextBox
-        Me.Label95 = New System.Windows.Forms.Label
-        Me.plMin4 = New System.Windows.Forms.TextBox
-        Me.plMin3 = New System.Windows.Forms.TextBox
-        Me.plMin2 = New System.Windows.Forms.TextBox
-        Me.plMin1 = New System.Windows.Forms.TextBox
-        Me.Label93 = New System.Windows.Forms.Label
-        Me.Label92 = New System.Windows.Forms.Label
-        Me.plSrc4 = New System.Windows.Forms.TextBox
-        Me.plSrc3 = New System.Windows.Forms.TextBox
-        Me.plSrc2 = New System.Windows.Forms.TextBox
-        Me.plSrc1 = New System.Windows.Forms.TextBox
-        Me.spineType = New System.Windows.Forms.Label
-        Me.Label106 = New System.Windows.Forms.Label
-        Me.Label105 = New System.Windows.Forms.Label
-        Me.Label104 = New System.Windows.Forms.Label
-        Me.Label101 = New System.Windows.Forms.Label
-        Me.Label100 = New System.Windows.Forms.Label
-        Me.Label94 = New System.Windows.Forms.Label
-        Me.btnSL6 = New System.Windows.Forms.RadioButton
-        Me.btnSL4 = New System.Windows.Forms.RadioButton
-        Me.btnSLB = New System.Windows.Forms.RadioButton
-        Me.Label103 = New System.Windows.Forms.Label
-        Me.Label102 = New System.Windows.Forms.Label
-        Me.plLeftMargin = New System.Windows.Forms.TextBox
-        Me.PLcount = New System.Windows.Forms.NumericUpDown
-        Me.plDistance = New System.Windows.Forms.TextBox
-        Me.Label99 = New System.Windows.Forms.Label
-        Me.Label98 = New System.Windows.Forms.Label
-        Me.plWork = New System.Windows.Forms.TextBox
-        Me.Label97 = New System.Windows.Forms.Label
-        Me.btnPlCustom = New System.Windows.Forms.RadioButton
-        Me.plOutput = New System.Windows.Forms.TextBox
-        Me.Label88 = New System.Windows.Forms.Label
-        Me.tweakParsingPanel = New System.Windows.Forms.Panel
-        Me.convertBlankTo = New System.Windows.Forms.TextBox
-        Me.Label65 = New System.Windows.Forms.Label
-        Me.TabControl2 = New System.Windows.Forms.TabControl
-        Me.TabPage7 = New System.Windows.Forms.TabPage
-        Me.hideCutterDecimal = New System.Windows.Forms.CheckBox
-        Me.lcType = New System.Windows.Forms.TextBox
-        Me.Label107 = New System.Windows.Forms.Label
-        Me.lcRemoveAfter = New System.Windows.Forms.CheckBox
-        Me.lcBreak = New System.Windows.Forms.TextBox
-        Me.Panel6 = New System.Windows.Forms.Panel
-        Me.lcOtherBreakAft = New System.Windows.Forms.RadioButton
-        Me.Label78 = New System.Windows.Forms.Label
-        Me.lcOtherBreakB4 = New System.Windows.Forms.RadioButton
-        Me.lcOtherNoBreak = New System.Windows.Forms.RadioButton
-        Me.Panel8 = New System.Windows.Forms.Panel
-        Me.Label76 = New System.Windows.Forms.Label
-        Me.lcInCutterBreak = New System.Windows.Forms.RadioButton
-        Me.lcIncutternobreak = New System.Windows.Forms.RadioButton
-        Me.Panel7 = New System.Windows.Forms.Panel
-        Me.Label75 = New System.Windows.Forms.Label
-        Me.lcCutterBreak = New System.Windows.Forms.RadioButton
-        Me.lcCutterNoBreak = New System.Windows.Forms.RadioButton
-        Me.Panel5 = New System.Windows.Forms.Panel
-        Me.lcDecimalBreakAfter = New System.Windows.Forms.RadioButton
-        Me.Label74 = New System.Windows.Forms.Label
-        Me.lcDecimalBreakB4 = New System.Windows.Forms.RadioButton
-        Me.lcNoDecimalBreak = New System.Windows.Forms.RadioButton
-        Me.lcNumericBreak = New System.Windows.Forms.RadioButton
-        Me.lcNoNumericBreak = New System.Windows.Forms.RadioButton
-        Me.Label66 = New System.Windows.Forms.Label
-        Me.TabPage8 = New System.Windows.Forms.TabPage
-        Me.deweyDecBreak = New System.Windows.Forms.CheckBox
-        Me.deweyDigitsToBreak = New System.Windows.Forms.TextBox
-        Me.Label128 = New System.Windows.Forms.Label
-        Me.Label127 = New System.Windows.Forms.Label
-        Me.Label126 = New System.Windows.Forms.Label
-        Me.Label125 = New System.Windows.Forms.Label
-        Me.deweydigitsperline = New System.Windows.Forms.TextBox
-        Me.deweyGroup3 = New System.Windows.Forms.CheckBox
-        Me.DeweyType = New System.Windows.Forms.TextBox
-        Me.Label108 = New System.Windows.Forms.Label
-        Me.deweyRemoveAfter = New System.Windows.Forms.CheckBox
-        Me.deweyCharBreak = New System.Windows.Forms.TextBox
-        Me.Panel15 = New System.Windows.Forms.Panel
-        Me.deweyCharBreakAft = New System.Windows.Forms.RadioButton
-        Me.Label84 = New System.Windows.Forms.Label
-        Me.deweyCharBreakb4 = New System.Windows.Forms.RadioButton
-        Me.deweyOtherNoBreak = New System.Windows.Forms.RadioButton
-        Me.Panel14 = New System.Windows.Forms.Panel
-        Me.Label82 = New System.Windows.Forms.Label
-        Me.deweyPrefixBreak = New System.Windows.Forms.RadioButton
-        Me.deweyPrefixNoBreak = New System.Windows.Forms.RadioButton
-        Me.Panel9 = New System.Windows.Forms.Panel
-        Me.Label77 = New System.Windows.Forms.Label
-        Me.deweyCutterBreak = New System.Windows.Forms.RadioButton
-        Me.deweyCutterNoBreak = New System.Windows.Forms.RadioButton
-        Me.Panel11 = New System.Windows.Forms.Panel
-        Me.deweyDecimalBreakAft = New System.Windows.Forms.RadioButton
-        Me.Label79 = New System.Windows.Forms.Label
-        Me.deweyDecimalBreakb4 = New System.Windows.Forms.RadioButton
-        Me.deweyDecimalNoBreak = New System.Windows.Forms.RadioButton
-        Me.TabPage10 = New System.Windows.Forms.TabPage
-        Me.sudocRemoveAfter = New System.Windows.Forms.CheckBox
-        Me.sudocCharBreak = New System.Windows.Forms.TextBox
-        Me.Panel16 = New System.Windows.Forms.Panel
-        Me.sudocCharBreakAft = New System.Windows.Forms.RadioButton
-        Me.Label113 = New System.Windows.Forms.Label
-        Me.sudocCharBreakB4 = New System.Windows.Forms.RadioButton
-        Me.sudocOtherNoBreak = New System.Windows.Forms.RadioButton
-        Me.sudocType = New System.Windows.Forms.TextBox
-        Me.Label109 = New System.Windows.Forms.Label
-        Me.Panel10 = New System.Windows.Forms.Panel
-        Me.sudocNoBreakB4Numerics = New System.Windows.Forms.RadioButton
-        Me.sudocBreakB4Numerics = New System.Windows.Forms.RadioButton
-        Me.Label85 = New System.Windows.Forms.Label
-        Me.Panel3 = New System.Windows.Forms.Panel
-        Me.sudocNoDecimalBreak = New System.Windows.Forms.RadioButton
-        Me.sudocBreakDecimal = New System.Windows.Forms.RadioButton
-        Me.Label69 = New System.Windows.Forms.Label
-        Me.sudocBreakBeforeColon = New System.Windows.Forms.RadioButton
-        Me.sudocBreakAfterColon = New System.Windows.Forms.RadioButton
-        Me.sudocNoColonBreak = New System.Windows.Forms.RadioButton
-        Me.Label67 = New System.Windows.Forms.Label
-        Me.Panel4 = New System.Windows.Forms.Panel
-        Me.sudocDashNoBreak = New System.Windows.Forms.RadioButton
-        Me.sudocDashBreak = New System.Windows.Forms.RadioButton
-        Me.Label70 = New System.Windows.Forms.Label
-        Me.Panel2 = New System.Windows.Forms.Panel
-        Me.sudocSlashNobreak = New System.Windows.Forms.RadioButton
-        Me.sudocSlashBreak = New System.Windows.Forms.RadioButton
-        Me.Label68 = New System.Windows.Forms.Label
-        Me.TabPage11 = New System.Windows.Forms.TabPage
-        Me.otherType = New System.Windows.Forms.TextBox
-        Me.Label110 = New System.Windows.Forms.Label
-        Me.otherRemoveAfter = New System.Windows.Forms.CheckBox
-        Me.otherFirstSpaceBreak = New System.Windows.Forms.RadioButton
-        Me.Panel13 = New System.Windows.Forms.Panel
-        Me.otherNumBreakAfter = New System.Windows.Forms.RadioButton
-        Me.otherNumBreakb4 = New System.Windows.Forms.RadioButton
-        Me.othernumnobreak = New System.Windows.Forms.RadioButton
-        Me.Label83 = New System.Windows.Forms.Label
-        Me.Panel12 = New System.Windows.Forms.Panel
-        Me.otherListBreakAfter = New System.Windows.Forms.RadioButton
-        Me.otherListBreakb4 = New System.Windows.Forms.RadioButton
-        Me.otherListNoBreak = New System.Windows.Forms.RadioButton
-        Me.Label81 = New System.Windows.Forms.Label
-        Me.otherBreak = New System.Windows.Forms.TextBox
-        Me.otherAllSpaceBreak = New System.Windows.Forms.RadioButton
-        Me.otherSpaceNoBreak = New System.Windows.Forms.RadioButton
-        Me.Label80 = New System.Windows.Forms.Label
-        Me.TabPage9 = New System.Windows.Forms.TabPage
-        Me.Label111 = New System.Windows.Forms.Label
-        Me.Label62 = New System.Windows.Forms.Label
-        Me.spaceBreak = New System.Windows.Forms.CheckBox
-        Me.issueListBreakAfter = New System.Windows.Forms.RadioButton
-        Me.issueListBreakB4 = New System.Windows.Forms.RadioButton
-        Me.issueListNoBreak = New System.Windows.Forms.RadioButton
-        Me.issueRemoveAfter = New System.Windows.Forms.CheckBox
-        Me.issueBreak = New System.Windows.Forms.TextBox
-        Me.BreakParen = New System.Windows.Forms.CheckBox
-        Me.ProtectColon = New System.Windows.Forms.CheckBox
-        Me.ColonBreak = New System.Windows.Forms.CheckBox
-        Me.Label73 = New System.Windows.Forms.Label
-        Me.Label71 = New System.Windows.Forms.Label
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.testComboBox = New System.Windows.Forms.ComboBox
-        Me.Label59 = New System.Windows.Forms.Label
-        Me.Label58 = New System.Windows.Forms.Label
-        Me.testCallNumType = New System.Windows.Forms.TextBox
-        Me.btnTestParser = New System.Windows.Forms.Button
-        Me.showFormatInfo = New System.Windows.Forms.TextBox
-        Me.FTPwarning2 = New System.Windows.Forms.Label
-        Me.Label91 = New System.Windows.Forms.Label
-        Me.chkUsePocketLabels = New System.Windows.Forms.CheckBox
-        Me.nonFlagWrapWidth = New System.Windows.Forms.TextBox
-        Me.flagWrapWidth = New System.Windows.Forms.TextBox
-        Me.nonFlagDefaults = New System.Windows.Forms.TextBox
-        Me.flagDefaults = New System.Windows.Forms.TextBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.tweakTest = New System.Windows.Forms.Label
-        Me.inOtherSource = New System.Windows.Forms.TextBox
-        Me.chkIncludeOther = New System.Windows.Forms.CheckBox
-        Me.chkIncludeHoldings = New System.Windows.Forms.CheckBox
-        Me.radio_useSOMparsing = New System.Windows.Forms.RadioButton
-        Me.parsingSource = New System.Windows.Forms.TextBox
-        Me.useExlibrisParsing = New System.Windows.Forms.RadioButton
-        Me.inCallNumSource = New System.Windows.Forms.TextBox
-        Me.inIssueLevelSource = New System.Windows.Forms.TextBox
-        Me.Label87 = New System.Windows.Forms.Label
-        Me.FlagSlips = New System.Windows.Forms.CheckBox
-        Me.Label33 = New System.Windows.Forms.Label
-        Me.Label28 = New System.Windows.Forms.Label
-        Me.Spine = New System.Windows.Forms.RadioButton
-        Me.CustomLabel = New System.Windows.Forms.RadioButton
-        Me.CustomText = New System.Windows.Forms.TextBox
-        Me.formatInfoPanel = New System.Windows.Forms.Panel
-        Me.suppress3 = New System.Windows.Forms.TextBox
-        Me.suppress2 = New System.Windows.Forms.TextBox
-        Me.suppress1 = New System.Windows.Forms.TextBox
-        Me.wrapWidth = New System.Windows.Forms.TextBox
-        Me.closeFormatInfo = New System.Windows.Forms.TextBox
-        Me.Label45 = New System.Windows.Forms.Label
-        Me.spineDefaults = New System.Windows.Forms.TextBox
-        Me.pocketDefaults = New System.Windows.Forms.TextBox
-        Me.TabPage3 = New System.Windows.Forms.TabPage
-        Me.Label57 = New System.Windows.Forms.Label
-        Me.radio_useSystem = New System.Windows.Forms.RadioButton
-        Me.radio_useLocal = New System.Windows.Forms.RadioButton
-        Me.Label54 = New System.Windows.Forms.Label
-        Me.Label44 = New System.Windows.Forms.Label
-        Me.btn_saveALT = New System.Windows.Forms.Button
-        Me.btn_cancelALT = New System.Windows.Forms.Button
-        Me.btn_deleteALT = New System.Windows.Forms.Button
-        Me.btn_changeALT = New System.Windows.Forms.Button
-        Me.btn_addALT = New System.Windows.Forms.Button
-        Me.altText = New System.Windows.Forms.TextBox
-        Me.altURL = New System.Windows.Forms.TextBox
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.TextBox14 = New System.Windows.Forms.TextBox
-        Me.TextBox13 = New System.Windows.Forms.TextBox
-        Me.Label14 = New System.Windows.Forms.Label
-        Me.Label13 = New System.Windows.Forms.Label
-        Me.SaveAboveLC = New System.Windows.Forms.Button
-        Me.altList = New System.Windows.Forms.ListBox
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox
-        Me.TabPage4 = New System.Windows.Forms.TabPage
-        Me.btnViewLicense = New System.Windows.Forms.Button
-        Me.btnDocDownload = New System.Windows.Forms.Button
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.chkXMLWarning = New System.Windows.Forms.CheckBox
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox
-        Me.lbl_copyXMLtext = New System.Windows.Forms.Label
-        Me.includeSettings = New System.Windows.Forms.CheckBox
-        Me.xmlCopyDone = New System.Windows.Forms.Label
-        Me.TabPage5 = New System.Windows.Forms.TabPage
-        Me.dontConvert = New System.Windows.Forms.CheckBox
-        Me.xmlShell = New System.Windows.Forms.TextBox
-        Me.Label134 = New System.Windows.Forms.Label
-        Me.Label133 = New System.Windows.Forms.Label
-        Me.Label132 = New System.Windows.Forms.Label
-        Me.Label131 = New System.Windows.Forms.Label
-        Me.apiMethod = New System.Windows.Forms.TextBox
-        Me.Label130 = New System.Windows.Forms.Label
-        Me.Label129 = New System.Windows.Forms.Label
-        Me.apiKey = New System.Windows.Forms.TextBox
-        Me.apiURL = New System.Windows.Forms.TextBox
-        Me.UseRestfulApi = New System.Windows.Forms.RadioButton
-        Me.ispList = New System.Windows.Forms.ListBox
-        Me.updatePath = New System.Windows.Forms.TextBox
-        Me.configText = New System.Windows.Forms.TextBox
-        Me.logEdits = New System.Windows.Forms.CheckBox
-        Me.Label64 = New System.Windows.Forms.Label
-        Me.Label63 = New System.Windows.Forms.Label
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.javaCheck = New System.Windows.Forms.Button
-        Me.javabox = New System.Windows.Forms.TextBox
-        Me.Label7 = New System.Windows.Forms.Label
-        Me.inAlmaInstCode = New System.Windows.Forms.TextBox
-        Me.Label53 = New System.Windows.Forms.Label
-        Me.inAlmaPassword = New System.Windows.Forms.TextBox
-        Me.Label52 = New System.Windows.Forms.Label
-        Me.inAlmaUsername = New System.Windows.Forms.TextBox
-        Me.Label51 = New System.Windows.Forms.Label
-        Me.inAlmaUrl = New System.Windows.Forms.TextBox
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.XMLPath = New System.Windows.Forms.TextBox
-        Me.btnMonitor = New System.Windows.Forms.Button
-        Me.WebServiceURL = New System.Windows.Forms.TextBox
-        Me.useServlet = New System.Windows.Forms.RadioButton
-        Me.UseJavaApp = New System.Windows.Forms.RadioButton
-        Me.TabPage6 = New System.Windows.Forms.TabPage
-        Me.showIsp = New System.Windows.Forms.CheckBox
-        Me.chkAddHostname = New System.Windows.Forms.CheckBox
-        Me.copyDone = New System.Windows.Forms.Label
-        Me.lbl_setclipboard = New System.Windows.Forms.Label
-        Me.chkGeoList = New System.Windows.Forms.CheckBox
-        Me.inclScanned = New System.Windows.Forms.CheckBox
-        Me.Label61 = New System.Windows.Forms.Label
-        Me.Label60 = New System.Windows.Forms.Label
-        Me.sortBox = New System.Windows.Forms.GroupBox
-        Me.byAlpha = New System.Windows.Forms.RadioButton
-        Me.byCount = New System.Windows.Forms.RadioButton
-        Me.sortSTL = New System.Windows.Forms.ListBox
-        Me.radioByLocation = New System.Windows.Forms.RadioButton
-        Me.Label56 = New System.Windows.Forms.Label
-        Me.searchArg = New System.Windows.Forms.TextBox
-        Me.radioSearch = New System.Windows.Forms.RadioButton
-        Me.statsOut = New System.Windows.Forms.TextBox
-        Me.radioByLibrary = New System.Windows.Forms.RadioButton
-        Me.radioByUser = New System.Windows.Forms.RadioButton
-        Me.btnScan = New System.Windows.Forms.Button
-        Me.STL = New System.Windows.Forms.ListBox
-        Me.Label55 = New System.Windows.Forms.Label
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.toScan = New System.Windows.Forms.DateTimePicker
-        Me.fromScan = New System.Windows.Forms.DateTimePicker
-        Me.createTemp = New System.Windows.Forms.CheckBox
-        Me.chkRequireUser = New System.Windows.Forms.CheckBox
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument
-        Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher
-        Me.FontDialog1 = New System.Windows.Forms.FontDialog
-        Me.FileSystemWatcher2 = New System.IO.FileSystemWatcher
-        Me.InputBox = New System.Windows.Forms.TextBox
-        Me.ScanButton = New System.Windows.Forms.Button
-        Me.SaveSettingsButn = New System.Windows.Forms.Button
-        Me.LoadSettingsButn = New System.Windows.Forms.Button
-        Me.Label27 = New System.Windows.Forms.Label
-        Me.HistoryList = New System.Windows.Forms.ListBox
-        Me.ArrowLabel = New System.Windows.Forms.Label
-        Me.TempLabelBox = New System.Windows.Forms.TextBox
-        Me.CreateTempLbl = New System.Windows.Forms.Label
-        Me.CheckForUpdates = New System.Windows.Forms.Button
+        Me.OutputBox = New System.Windows.Forms.TextBox()
+        Me.ManualPrint = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ReviewBox = New System.Windows.Forms.RadioButton()
+        Me.AutoPrintBox = New System.Windows.Forms.RadioButton()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.viaDOSPanel = New System.Windows.Forms.Panel()
+        Me.viadosCaution = New System.Windows.Forms.Label()
+        Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.appendAscii = New System.Windows.Forms.TextBox()
+        Me.dosUseFF = New System.Windows.Forms.RadioButton()
+        Me.dosAddLines = New System.Windows.Forms.RadioButton()
+        Me.dosBlankLines = New System.Windows.Forms.TextBox()
+        Me.Label115 = New System.Windows.Forms.Label()
+        Me.Label120 = New System.Windows.Forms.Label()
+        Me.Label122 = New System.Windows.Forms.Label()
+        Me.dosParam2 = New System.Windows.Forms.TextBox()
+        Me.dosParam1 = New System.Windows.Forms.TextBox()
+        Me.batsignal = New System.Windows.Forms.Label()
+        Me.loadViados = New System.Windows.Forms.Button()
+        Me.hideDosWindow = New System.Windows.Forms.CheckBox()
+        Me.Label119 = New System.Windows.Forms.Label()
+        Me.Label118 = New System.Windows.Forms.Label()
+        Me.dosPlTabNum = New System.Windows.Forms.TextBox()
+        Me.dosPlColNum = New System.Windows.Forms.TextBox()
+        Me.dosPlUseTab = New System.Windows.Forms.RadioButton()
+        Me.dosPlUseCol = New System.Windows.Forms.RadioButton()
+        Me.Label117 = New System.Windows.Forms.Label()
+        Me.Label114 = New System.Windows.Forms.Label()
+        Me.batchDisplay = New System.Windows.Forms.TextBox()
+        Me.viadosSave = New System.Windows.Forms.Button()
+        Me.useDOSBatch = New System.Windows.Forms.CheckBox()
+        Me.FTPwarning = New System.Windows.Forms.Label()
+        Me.Label72 = New System.Windows.Forms.Label()
+        Me.showLabelType = New System.Windows.Forms.Label()
+        Me.orientationPanel = New System.Windows.Forms.Panel()
+        Me.usePortrait = New System.Windows.Forms.RadioButton()
+        Me.useLandscape = New System.Windows.Forms.RadioButton()
+        Me.marginPanel = New System.Windows.Forms.Panel()
+        Me.inUnits1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.inTopMargin = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.inLeftMargin = New System.Windows.Forms.TextBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.inLineSpacing = New System.Windows.Forms.TextBox()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.UseLaser = New System.Windows.Forms.RadioButton()
+        Me.inMaxLines = New System.Windows.Forms.TextBox()
+        Me.inMaxChars = New System.Windows.Forms.TextBox()
+        Me.UseFTP = New System.Windows.Forms.RadioButton()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.UseDesktop = New System.Windows.Forms.RadioButton()
+        Me.FTPGroup = New System.Windows.Forms.GroupBox()
+        Me.ftpRegisterMsg = New System.Windows.Forms.Label()
+        Me.btn_ftpRegister = New System.Windows.Forms.Button()
+        Me.ftpArrow = New System.Windows.Forms.Label()
+        Me.FTPInfo = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.FTPHelp = New System.Windows.Forms.Label()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.FTPPassword = New System.Windows.Forms.TextBox()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.FTPLogin = New System.Windows.Forms.TextBox()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.FTPip = New System.Windows.Forms.TextBox()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TextBox23 = New System.Windows.Forms.TextBox()
+        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.TextBox21 = New System.Windows.Forms.TextBox()
+        Me.TextBox20 = New System.Windows.Forms.TextBox()
+        Me.TextBox19 = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.DesktopGroup = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.btnBCFontDialog = New System.Windows.Forms.Button()
+        Me.inBCFontWeight = New System.Windows.Forms.CheckBox()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.inBCFontSize = New System.Windows.Forms.TextBox()
+        Me.inBCFontName = New System.Windows.Forms.TextBox()
+        Me.SheetSettings = New System.Windows.Forms.Panel()
+        Me.Label121 = New System.Windows.Forms.Label()
+        Me.inUnits2 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.inStartCol = New System.Windows.Forms.TextBox()
+        Me.inStartRow = New System.Windows.Forms.TextBox()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.batchEntries = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.batchNumber = New System.Windows.Forms.NumericUpDown()
+        Me.batchPreview = New System.Windows.Forms.TextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnPrintBatch = New System.Windows.Forms.Button()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.inGapHeight = New System.Windows.Forms.TextBox()
+        Me.inGapWidth = New System.Windows.Forms.TextBox()
+        Me.inLabelHeight = New System.Windows.Forms.TextBox()
+        Me.inLabelWidth = New System.Windows.Forms.TextBox()
+        Me.inLabelCols = New System.Windows.Forms.TextBox()
+        Me.inLabelRows = New System.Windows.Forms.TextBox()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.inFontWeight = New System.Windows.Forms.CheckBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.inFontSize = New System.Windows.Forms.TextBox()
+        Me.FontDialogButn = New System.Windows.Forms.Button()
+        Me.inFontName = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PrinterDialogButn = New System.Windows.Forms.Button()
+        Me.inPrinterName = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.PocketLabelPanel = New System.Windows.Forms.Panel()
+        Me.plUnits2 = New System.Windows.Forms.Label()
+        Me.plUnits1 = New System.Windows.Forms.Label()
+        Me.userDefinedPanel = New System.Windows.Forms.Panel()
+        Me.Label96 = New System.Windows.Forms.Label()
+        Me.plMax4 = New System.Windows.Forms.TextBox()
+        Me.plMax3 = New System.Windows.Forms.TextBox()
+        Me.plMax2 = New System.Windows.Forms.TextBox()
+        Me.plMax1 = New System.Windows.Forms.TextBox()
+        Me.Label95 = New System.Windows.Forms.Label()
+        Me.plMin4 = New System.Windows.Forms.TextBox()
+        Me.plMin3 = New System.Windows.Forms.TextBox()
+        Me.plMin2 = New System.Windows.Forms.TextBox()
+        Me.plMin1 = New System.Windows.Forms.TextBox()
+        Me.Label93 = New System.Windows.Forms.Label()
+        Me.Label92 = New System.Windows.Forms.Label()
+        Me.plSrc4 = New System.Windows.Forms.TextBox()
+        Me.plSrc3 = New System.Windows.Forms.TextBox()
+        Me.plSrc2 = New System.Windows.Forms.TextBox()
+        Me.plSrc1 = New System.Windows.Forms.TextBox()
+        Me.spineType = New System.Windows.Forms.Label()
+        Me.Label106 = New System.Windows.Forms.Label()
+        Me.Label105 = New System.Windows.Forms.Label()
+        Me.Label104 = New System.Windows.Forms.Label()
+        Me.Label101 = New System.Windows.Forms.Label()
+        Me.Label100 = New System.Windows.Forms.Label()
+        Me.Label94 = New System.Windows.Forms.Label()
+        Me.btnSL6 = New System.Windows.Forms.RadioButton()
+        Me.btnSL4 = New System.Windows.Forms.RadioButton()
+        Me.btnSLB = New System.Windows.Forms.RadioButton()
+        Me.Label103 = New System.Windows.Forms.Label()
+        Me.Label102 = New System.Windows.Forms.Label()
+        Me.plLeftMargin = New System.Windows.Forms.TextBox()
+        Me.PLcount = New System.Windows.Forms.NumericUpDown()
+        Me.plDistance = New System.Windows.Forms.TextBox()
+        Me.Label99 = New System.Windows.Forms.Label()
+        Me.Label98 = New System.Windows.Forms.Label()
+        Me.plWork = New System.Windows.Forms.TextBox()
+        Me.Label97 = New System.Windows.Forms.Label()
+        Me.btnPlCustom = New System.Windows.Forms.RadioButton()
+        Me.plOutput = New System.Windows.Forms.TextBox()
+        Me.Label88 = New System.Windows.Forms.Label()
+        Me.tweakParsingPanel = New System.Windows.Forms.Panel()
+        Me.convertBlankTo = New System.Windows.Forms.TextBox()
+        Me.Label65 = New System.Windows.Forms.Label()
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.hideCutterDecimal = New System.Windows.Forms.CheckBox()
+        Me.lcType = New System.Windows.Forms.TextBox()
+        Me.Label107 = New System.Windows.Forms.Label()
+        Me.lcRemoveAfter = New System.Windows.Forms.CheckBox()
+        Me.lcBreak = New System.Windows.Forms.TextBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.lcOtherBreakAft = New System.Windows.Forms.RadioButton()
+        Me.Label78 = New System.Windows.Forms.Label()
+        Me.lcOtherBreakB4 = New System.Windows.Forms.RadioButton()
+        Me.lcOtherNoBreak = New System.Windows.Forms.RadioButton()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label76 = New System.Windows.Forms.Label()
+        Me.lcInCutterBreak = New System.Windows.Forms.RadioButton()
+        Me.lcIncutternobreak = New System.Windows.Forms.RadioButton()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label75 = New System.Windows.Forms.Label()
+        Me.lcCutterBreak = New System.Windows.Forms.RadioButton()
+        Me.lcCutterNoBreak = New System.Windows.Forms.RadioButton()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.lcDecimalBreakAfter = New System.Windows.Forms.RadioButton()
+        Me.Label74 = New System.Windows.Forms.Label()
+        Me.lcDecimalBreakB4 = New System.Windows.Forms.RadioButton()
+        Me.lcNoDecimalBreak = New System.Windows.Forms.RadioButton()
+        Me.lcNumericBreak = New System.Windows.Forms.RadioButton()
+        Me.lcNoNumericBreak = New System.Windows.Forms.RadioButton()
+        Me.Label66 = New System.Windows.Forms.Label()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.deweyDecBreak = New System.Windows.Forms.CheckBox()
+        Me.deweyDigitsToBreak = New System.Windows.Forms.TextBox()
+        Me.Label128 = New System.Windows.Forms.Label()
+        Me.Label127 = New System.Windows.Forms.Label()
+        Me.Label126 = New System.Windows.Forms.Label()
+        Me.Label125 = New System.Windows.Forms.Label()
+        Me.deweydigitsperline = New System.Windows.Forms.TextBox()
+        Me.deweyGroup3 = New System.Windows.Forms.CheckBox()
+        Me.DeweyType = New System.Windows.Forms.TextBox()
+        Me.Label108 = New System.Windows.Forms.Label()
+        Me.deweyRemoveAfter = New System.Windows.Forms.CheckBox()
+        Me.deweyCharBreak = New System.Windows.Forms.TextBox()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.deweyCharBreakAft = New System.Windows.Forms.RadioButton()
+        Me.Label84 = New System.Windows.Forms.Label()
+        Me.deweyCharBreakb4 = New System.Windows.Forms.RadioButton()
+        Me.deweyOtherNoBreak = New System.Windows.Forms.RadioButton()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Label82 = New System.Windows.Forms.Label()
+        Me.deweyPrefixBreak = New System.Windows.Forms.RadioButton()
+        Me.deweyPrefixNoBreak = New System.Windows.Forms.RadioButton()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Label77 = New System.Windows.Forms.Label()
+        Me.deweyCutterBreak = New System.Windows.Forms.RadioButton()
+        Me.deweyCutterNoBreak = New System.Windows.Forms.RadioButton()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.deweyDecimalBreakAft = New System.Windows.Forms.RadioButton()
+        Me.Label79 = New System.Windows.Forms.Label()
+        Me.deweyDecimalBreakb4 = New System.Windows.Forms.RadioButton()
+        Me.deweyDecimalNoBreak = New System.Windows.Forms.RadioButton()
+        Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.sudocRemoveAfter = New System.Windows.Forms.CheckBox()
+        Me.sudocCharBreak = New System.Windows.Forms.TextBox()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.sudocCharBreakAft = New System.Windows.Forms.RadioButton()
+        Me.Label113 = New System.Windows.Forms.Label()
+        Me.sudocCharBreakB4 = New System.Windows.Forms.RadioButton()
+        Me.sudocOtherNoBreak = New System.Windows.Forms.RadioButton()
+        Me.sudocType = New System.Windows.Forms.TextBox()
+        Me.Label109 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.sudocNoBreakB4Numerics = New System.Windows.Forms.RadioButton()
+        Me.sudocBreakB4Numerics = New System.Windows.Forms.RadioButton()
+        Me.Label85 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.sudocNoDecimalBreak = New System.Windows.Forms.RadioButton()
+        Me.sudocBreakDecimal = New System.Windows.Forms.RadioButton()
+        Me.Label69 = New System.Windows.Forms.Label()
+        Me.sudocBreakBeforeColon = New System.Windows.Forms.RadioButton()
+        Me.sudocBreakAfterColon = New System.Windows.Forms.RadioButton()
+        Me.sudocNoColonBreak = New System.Windows.Forms.RadioButton()
+        Me.Label67 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.sudocDashNoBreak = New System.Windows.Forms.RadioButton()
+        Me.sudocDashBreak = New System.Windows.Forms.RadioButton()
+        Me.Label70 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.sudocSlashNobreak = New System.Windows.Forms.RadioButton()
+        Me.sudocSlashBreak = New System.Windows.Forms.RadioButton()
+        Me.Label68 = New System.Windows.Forms.Label()
+        Me.TabPage11 = New System.Windows.Forms.TabPage()
+        Me.otherType = New System.Windows.Forms.TextBox()
+        Me.Label110 = New System.Windows.Forms.Label()
+        Me.otherRemoveAfter = New System.Windows.Forms.CheckBox()
+        Me.otherFirstSpaceBreak = New System.Windows.Forms.RadioButton()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.otherNumBreakAfter = New System.Windows.Forms.RadioButton()
+        Me.otherNumBreakb4 = New System.Windows.Forms.RadioButton()
+        Me.othernumnobreak = New System.Windows.Forms.RadioButton()
+        Me.Label83 = New System.Windows.Forms.Label()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.otherListBreakAfter = New System.Windows.Forms.RadioButton()
+        Me.otherListBreakb4 = New System.Windows.Forms.RadioButton()
+        Me.otherListNoBreak = New System.Windows.Forms.RadioButton()
+        Me.Label81 = New System.Windows.Forms.Label()
+        Me.otherBreak = New System.Windows.Forms.TextBox()
+        Me.otherAllSpaceBreak = New System.Windows.Forms.RadioButton()
+        Me.otherSpaceNoBreak = New System.Windows.Forms.RadioButton()
+        Me.Label80 = New System.Windows.Forms.Label()
+        Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.Label111 = New System.Windows.Forms.Label()
+        Me.Label62 = New System.Windows.Forms.Label()
+        Me.spaceBreak = New System.Windows.Forms.CheckBox()
+        Me.issueListBreakAfter = New System.Windows.Forms.RadioButton()
+        Me.issueListBreakB4 = New System.Windows.Forms.RadioButton()
+        Me.issueListNoBreak = New System.Windows.Forms.RadioButton()
+        Me.issueRemoveAfter = New System.Windows.Forms.CheckBox()
+        Me.issueBreak = New System.Windows.Forms.TextBox()
+        Me.BreakParen = New System.Windows.Forms.CheckBox()
+        Me.ProtectColon = New System.Windows.Forms.CheckBox()
+        Me.ColonBreak = New System.Windows.Forms.CheckBox()
+        Me.Label73 = New System.Windows.Forms.Label()
+        Me.Label71 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.testComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label59 = New System.Windows.Forms.Label()
+        Me.Label58 = New System.Windows.Forms.Label()
+        Me.testCallNumType = New System.Windows.Forms.TextBox()
+        Me.btnTestParser = New System.Windows.Forms.Button()
+        Me.showFormatInfo = New System.Windows.Forms.TextBox()
+        Me.FTPwarning2 = New System.Windows.Forms.Label()
+        Me.Label91 = New System.Windows.Forms.Label()
+        Me.chkUsePocketLabels = New System.Windows.Forms.CheckBox()
+        Me.nonFlagWrapWidth = New System.Windows.Forms.TextBox()
+        Me.flagWrapWidth = New System.Windows.Forms.TextBox()
+        Me.nonFlagDefaults = New System.Windows.Forms.TextBox()
+        Me.flagDefaults = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.tweakTest = New System.Windows.Forms.Label()
+        Me.inOtherSource = New System.Windows.Forms.TextBox()
+        Me.chkIncludeOther = New System.Windows.Forms.CheckBox()
+        Me.chkIncludeHoldings = New System.Windows.Forms.CheckBox()
+        Me.radio_useSOMparsing = New System.Windows.Forms.RadioButton()
+        Me.parsingSource = New System.Windows.Forms.TextBox()
+        Me.useExlibrisParsing = New System.Windows.Forms.RadioButton()
+        Me.inCallNumSource = New System.Windows.Forms.TextBox()
+        Me.inIssueLevelSource = New System.Windows.Forms.TextBox()
+        Me.Label87 = New System.Windows.Forms.Label()
+        Me.FlagSlips = New System.Windows.Forms.CheckBox()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Spine = New System.Windows.Forms.RadioButton()
+        Me.CustomLabel = New System.Windows.Forms.RadioButton()
+        Me.CustomText = New System.Windows.Forms.TextBox()
+        Me.formatInfoPanel = New System.Windows.Forms.Panel()
+        Me.suppress3 = New System.Windows.Forms.TextBox()
+        Me.suppress2 = New System.Windows.Forms.TextBox()
+        Me.suppress1 = New System.Windows.Forms.TextBox()
+        Me.wrapWidth = New System.Windows.Forms.TextBox()
+        Me.closeFormatInfo = New System.Windows.Forms.TextBox()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.spineDefaults = New System.Windows.Forms.TextBox()
+        Me.pocketDefaults = New System.Windows.Forms.TextBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.radio_useSystem = New System.Windows.Forms.RadioButton()
+        Me.radio_useLocal = New System.Windows.Forms.RadioButton()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.btn_saveALT = New System.Windows.Forms.Button()
+        Me.btn_cancelALT = New System.Windows.Forms.Button()
+        Me.btn_deleteALT = New System.Windows.Forms.Button()
+        Me.btn_changeALT = New System.Windows.Forms.Button()
+        Me.btn_addALT = New System.Windows.Forms.Button()
+        Me.altText = New System.Windows.Forms.TextBox()
+        Me.altURL = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.SaveAboveLC = New System.Windows.Forms.Button()
+        Me.altList = New System.Windows.Forms.ListBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.btnDocDownload = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.chkXMLWarning = New System.Windows.Forms.CheckBox()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.lbl_copyXMLtext = New System.Windows.Forms.Label()
+        Me.includeSettings = New System.Windows.Forms.CheckBox()
+        Me.xmlCopyDone = New System.Windows.Forms.Label()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.dontConvert = New System.Windows.Forms.CheckBox()
+        Me.xmlShell = New System.Windows.Forms.TextBox()
+        Me.Label134 = New System.Windows.Forms.Label()
+        Me.Label131 = New System.Windows.Forms.Label()
+        Me.apiMethod = New System.Windows.Forms.TextBox()
+        Me.Label130 = New System.Windows.Forms.Label()
+        Me.Label129 = New System.Windows.Forms.Label()
+        Me.apiKey = New System.Windows.Forms.TextBox()
+        Me.apiURL = New System.Windows.Forms.TextBox()
+        Me.UseRestfulApi = New System.Windows.Forms.RadioButton()
+        Me.ispList = New System.Windows.Forms.ListBox()
+        Me.updatePath = New System.Windows.Forms.TextBox()
+        Me.configText = New System.Windows.Forms.TextBox()
+        Me.logEdits = New System.Windows.Forms.CheckBox()
+        Me.XMLPath = New System.Windows.Forms.TextBox()
+        Me.btnMonitor = New System.Windows.Forms.Button()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.showIsp = New System.Windows.Forms.CheckBox()
+        Me.chkAddHostname = New System.Windows.Forms.CheckBox()
+        Me.copyDone = New System.Windows.Forms.Label()
+        Me.lbl_setclipboard = New System.Windows.Forms.Label()
+        Me.chkGeoList = New System.Windows.Forms.CheckBox()
+        Me.inclScanned = New System.Windows.Forms.CheckBox()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.sortBox = New System.Windows.Forms.GroupBox()
+        Me.byAlpha = New System.Windows.Forms.RadioButton()
+        Me.byCount = New System.Windows.Forms.RadioButton()
+        Me.sortSTL = New System.Windows.Forms.ListBox()
+        Me.radioByLocation = New System.Windows.Forms.RadioButton()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.searchArg = New System.Windows.Forms.TextBox()
+        Me.radioSearch = New System.Windows.Forms.RadioButton()
+        Me.statsOut = New System.Windows.Forms.TextBox()
+        Me.radioByLibrary = New System.Windows.Forms.RadioButton()
+        Me.radioByUser = New System.Windows.Forms.RadioButton()
+        Me.btnScan = New System.Windows.Forms.Button()
+        Me.STL = New System.Windows.Forms.ListBox()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.toScan = New System.Windows.Forms.DateTimePicker()
+        Me.fromScan = New System.Windows.Forms.DateTimePicker()
+        Me.createTemp = New System.Windows.Forms.CheckBox()
+        Me.chkRequireUser = New System.Windows.Forms.CheckBox()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
+        Me.FontDialog1 = New System.Windows.Forms.FontDialog()
+        Me.FileSystemWatcher2 = New System.IO.FileSystemWatcher()
+        Me.InputBox = New System.Windows.Forms.TextBox()
+        Me.ScanButton = New System.Windows.Forms.Button()
+        Me.SaveSettingsButn = New System.Windows.Forms.Button()
+        Me.LoadSettingsButn = New System.Windows.Forms.Button()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.HistoryList = New System.Windows.Forms.ListBox()
+        Me.ArrowLabel = New System.Windows.Forms.Label()
+        Me.TempLabelBox = New System.Windows.Forms.TextBox()
+        Me.CreateTempLbl = New System.Windows.Forms.Label()
+        Me.CheckForUpdates = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label47 = New System.Windows.Forms.Label
-        Me.usrname = New System.Windows.Forms.TextBox
-        Me.lblStation = New System.Windows.Forms.Label
-        Me.station = New System.Windows.Forms.TextBox
-        Me.LabelRepeat = New System.Windows.Forms.NumericUpDown
-        Me.lblXMLWarn = New System.Windows.Forms.Label
-        Me.lblToggleAdmin = New System.Windows.Forms.Label
-        Me.unitCM = New System.Windows.Forms.RadioButton
-        Me.unitINCH = New System.Windows.Forms.RadioButton
-        Me.decimalCOMMA = New System.Windows.Forms.RadioButton
-        Me.decimalDOT = New System.Windows.Forms.RadioButton
-        Me.Label34 = New System.Windows.Forms.Label
-        Me.PrintDocument2 = New System.Drawing.Printing.PrintDocument
-        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog
-        Me.parsedBy = New System.Windows.Forms.Label
-        Me.lblUser = New System.Windows.Forms.Label
-        Me.Label10 = New System.Windows.Forms.Label
-        Me.tips = New System.Windows.Forms.CheckBox
-        Me.Label86 = New System.Windows.Forms.Label
-        Me.TextBox24 = New System.Windows.Forms.TextBox
-        Me.printProgress = New System.Windows.Forms.Label
-        Me.licenseAgreement = New System.Windows.Forms.TextBox
-        Me.licensePanel = New System.Windows.Forms.Panel
-        Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.cancelAgreement = New System.Windows.Forms.Button
-        Me.acceptAgreement = New System.Windows.Forms.Button
-        Me.licenseHeadline = New System.Windows.Forms.Label
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton
-        Me.Label112 = New System.Windows.Forms.Label
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton
-        Me.Panel18 = New System.Windows.Forms.Panel
-        Me.Label116 = New System.Windows.Forms.Label
-        Me.Panel19 = New System.Windows.Forms.Panel
-        Me.Label124 = New System.Windows.Forms.Label
-        Me.Label123 = New System.Windows.Forms.Label
-        Me.xboxPanel = New System.Windows.Forms.Panel
-        Me.Label90 = New System.Windows.Forms.Label
-        Me.Label89 = New System.Windows.Forms.Label
-        Me.closeXbox = New System.Windows.Forms.Label
-        Me.XBOX = New System.Windows.Forms.ListBox
-        Me.holdingsBy = New System.Windows.Forms.Label
-        Me.accessType = New System.Windows.Forms.Label
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.usrname = New System.Windows.Forms.TextBox()
+        Me.lblStation = New System.Windows.Forms.Label()
+        Me.station = New System.Windows.Forms.TextBox()
+        Me.LabelRepeat = New System.Windows.Forms.NumericUpDown()
+        Me.lblXMLWarn = New System.Windows.Forms.Label()
+        Me.lblToggleAdmin = New System.Windows.Forms.Label()
+        Me.unitCM = New System.Windows.Forms.RadioButton()
+        Me.unitINCH = New System.Windows.Forms.RadioButton()
+        Me.decimalCOMMA = New System.Windows.Forms.RadioButton()
+        Me.decimalDOT = New System.Windows.Forms.RadioButton()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.PrintDocument2 = New System.Drawing.Printing.PrintDocument()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.parsedBy = New System.Windows.Forms.Label()
+        Me.lblUser = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.tips = New System.Windows.Forms.CheckBox()
+        Me.Label86 = New System.Windows.Forms.Label()
+        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.printProgress = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.Label112 = New System.Windows.Forms.Label()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.Label116 = New System.Windows.Forms.Label()
+        Me.Panel19 = New System.Windows.Forms.Panel()
+        Me.Label124 = New System.Windows.Forms.Label()
+        Me.Label123 = New System.Windows.Forms.Label()
+        Me.xboxPanel = New System.Windows.Forms.Panel()
+        Me.Label90 = New System.Windows.Forms.Label()
+        Me.Label89 = New System.Windows.Forms.Label()
+        Me.closeXbox = New System.Windows.Forms.Label()
+        Me.XBOX = New System.Windows.Forms.ListBox()
+        Me.holdingsBy = New System.Windows.Forms.Label()
+        Me.accessType = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -552,13 +525,11 @@ Partial Class Form1
         Me.TabPage4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         Me.sortBox.SuspendLayout()
         CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FileSystemWatcher2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LabelRepeat, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.licensePanel.SuspendLayout()
         Me.Panel18.SuspendLayout()
         Me.Panel19.SuspendLayout()
         Me.xboxPanel.SuspendLayout()
@@ -922,8 +893,8 @@ Partial Class Form1
         Me.dosPlUseCol.TabStop = True
         Me.dosPlUseCol.Tag = "radio_useplcolspacing"
         Me.dosPlUseCol.Text = " in column"
-        Me.ToolTip1.SetToolTip(Me.dosPlUseCol, "For fixed pitch fonts, add spaces between spine & pocket label for proper alignme" & _
-                "nt.")
+        Me.ToolTip1.SetToolTip(Me.dosPlUseCol, "For fixed pitch fonts, add spaces between spine & pocket label for proper alignme" &
+        "nt.")
         Me.dosPlUseCol.UseVisualStyleBackColor = True
         '
         'Label117
@@ -1284,8 +1255,8 @@ Partial Class Form1
         Me.ftpRegisterMsg.Size = New System.Drawing.Size(172, 16)
         Me.ftpRegisterMsg.TabIndex = 41
         Me.ftpRegisterMsg.Text = "changes to Logon ID or Password."
-        Me.ToolTip1.SetToolTip(Me.ftpRegisterMsg, "Clicking 'Register' rewrites the sendlabel.txt file with the new Login ID and/or " & _
-                "Password.")
+        Me.ToolTip1.SetToolTip(Me.ftpRegisterMsg, "Clicking 'Register' rewrites the sendlabel.txt file with the new Login ID and/or " &
+        "Password.")
         Me.ftpRegisterMsg.Visible = False
         '
         'btn_ftpRegister
@@ -1295,8 +1266,8 @@ Partial Class Form1
         Me.btn_ftpRegister.Size = New System.Drawing.Size(56, 24)
         Me.btn_ftpRegister.TabIndex = 40
         Me.btn_ftpRegister.Text = "Register"
-        Me.ToolTip1.SetToolTip(Me.btn_ftpRegister, "Clicking 'Register' rewrites the sendlabel.txt file with the new Login ID and/or " & _
-                "Password.")
+        Me.ToolTip1.SetToolTip(Me.btn_ftpRegister, "Clicking 'Register' rewrites the sendlabel.txt file with the new Login ID and/or " &
+        "Password.")
         Me.btn_ftpRegister.UseVisualStyleBackColor = True
         Me.btn_ftpRegister.Visible = False
         '
@@ -1535,8 +1506,8 @@ Partial Class Form1
         Me.TextBox17.Size = New System.Drawing.Size(152, 132)
         Me.TextBox17.TabIndex = 0
         Me.TextBox17.Tag = "text_ftpcommands"
-        Me.TextBox17.Text = "M l fnt;gothic.ttf" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "m m" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "J" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "H 100" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "S l1;12,0,37,41,25" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "O R" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "F 8;gothic" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "#LABELTEX" & _
-            "T#" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A #COUNT#"
+        Me.TextBox17.Text = "M l fnt;gothic.ttf" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "m m" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "J" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "H 100" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "S l1;12,0,37,41,25" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "O R" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "F 8;gothic" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "#LABELTEX" &
+    "T#" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A #COUNT#"
         '
         'DesktopGroup
         '
@@ -2312,8 +2283,8 @@ Partial Class Form1
         Me.plSrc4.Size = New System.Drawing.Size(172, 20)
         Me.plSrc4.TabIndex = 45
         Me.plSrc4.Tag = "text_plsource4"
-        Me.ToolTip1.SetToolTip(Me.plSrc4, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" & _
-                "L field.")
+        Me.ToolTip1.SetToolTip(Me.plSrc4, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" &
+        "L field.")
         '
         'plSrc3
         '
@@ -2324,8 +2295,8 @@ Partial Class Form1
         Me.plSrc3.Size = New System.Drawing.Size(172, 20)
         Me.plSrc3.TabIndex = 42
         Me.plSrc3.Tag = "text_plsource3"
-        Me.ToolTip1.SetToolTip(Me.plSrc3, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" & _
-                "L field.")
+        Me.ToolTip1.SetToolTip(Me.plSrc3, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" &
+        "L field.")
         '
         'plSrc2
         '
@@ -2336,8 +2307,8 @@ Partial Class Form1
         Me.plSrc2.Size = New System.Drawing.Size(172, 20)
         Me.plSrc2.TabIndex = 39
         Me.plSrc2.Tag = "text_plsource2"
-        Me.ToolTip1.SetToolTip(Me.plSrc2, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" & _
-                "L field.")
+        Me.ToolTip1.SetToolTip(Me.plSrc2, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" &
+        "L field.")
         '
         'plSrc1
         '
@@ -2348,8 +2319,8 @@ Partial Class Form1
         Me.plSrc1.Size = New System.Drawing.Size(172, 20)
         Me.plSrc1.TabIndex = 36
         Me.plSrc1.Tag = "text_plsource1"
-        Me.ToolTip1.SetToolTip(Me.plSrc1, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" & _
-                "L field.")
+        Me.ToolTip1.SetToolTip(Me.plSrc1, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" &
+        "L field.")
         '
         'spineType
         '
@@ -2359,8 +2330,8 @@ Partial Class Form1
         Me.spineType.Name = "spineType"
         Me.spineType.Size = New System.Drawing.Size(188, 15)
         Me.spineType.TabIndex = 77
-        Me.ToolTip1.SetToolTip(Me.spineType, "The spine label portion of the pocket label set will depend on the Label Type sel" & _
-                "ected in the Call Number Format panel.")
+        Me.ToolTip1.SetToolTip(Me.spineType, "The spine label portion of the pocket label set will depend on the Label Type sel" &
+        "ected in the Call Number Format panel.")
         '
         'Label106
         '
@@ -2688,8 +2659,8 @@ Partial Class Form1
         Me.lcType.TabIndex = 25
         Me.lcType.Tag = "text_lctype"
         Me.lcType.Text = "0,2"
-        Me.ToolTip1.SetToolTip(Me.lcType, "One or more call number types (separated by commas) that will be handled by this " & _
-                "parsing routine.")
+        Me.ToolTip1.SetToolTip(Me.lcType, "One or more call number types (separated by commas) that will be handled by this " &
+        "parsing routine.")
         '
         'Label107
         '
@@ -3009,8 +2980,8 @@ Partial Class Form1
         Me.deweyDigitsToBreak.Tag = "text_deweydigitstobreak"
         Me.deweyDigitsToBreak.Text = "4"
         Me.deweyDigitsToBreak.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.ToolTip1.SetToolTip(Me.deweyDigitsToBreak, "The class number will not break unless the number of digits after the decimal poi" & _
-                "nt exceeds this value (from 2 through 7).")
+        Me.ToolTip1.SetToolTip(Me.deweyDigitsToBreak, "The class number will not break unless the number of digits after the decimal poi" &
+        "nt exceeds this value (from 2 through 7).")
         '
         'Label128
         '
@@ -3080,8 +3051,8 @@ Partial Class Form1
         Me.deweyGroup3.Size = New System.Drawing.Size(15, 14)
         Me.deweyGroup3.TabIndex = 28
         Me.deweyGroup3.Tag = "check_deweydigitsperline"
-        Me.ToolTip1.SetToolTip(Me.deweyGroup3, "After breaking on the decimal point, display the remaining digits in groups 2 thr" & _
-                "ough 7 digits.")
+        Me.ToolTip1.SetToolTip(Me.deweyGroup3, "After breaking on the decimal point, display the remaining digits in groups 2 thr" &
+        "ough 7 digits.")
         Me.deweyGroup3.UseVisualStyleBackColor = True
         '
         'DeweyType
@@ -3095,8 +3066,8 @@ Partial Class Form1
         Me.DeweyType.TabIndex = 27
         Me.DeweyType.Tag = "text_deweytype"
         Me.DeweyType.Text = "1"
-        Me.ToolTip1.SetToolTip(Me.DeweyType, "One or more call number types (separated by commas) that will be handled by this " & _
-                "parsing routine.")
+        Me.ToolTip1.SetToolTip(Me.DeweyType, "One or more call number types (separated by commas) that will be handled by this " &
+        "parsing routine.")
         '
         'Label108
         '
@@ -3341,8 +3312,8 @@ Partial Class Form1
         Me.deweyDecimalNoBreak.TabStop = True
         Me.deweyDecimalNoBreak.Tag = "radio_deweydecnobreak"
         Me.deweyDecimalNoBreak.Text = "No break"
-        Me.ToolTip1.SetToolTip(Me.deweyDecimalNoBreak, "Don't break the class number (unless after a specific number of digits past the d" & _
-                "ecimal point)")
+        Me.ToolTip1.SetToolTip(Me.deweyDecimalNoBreak, "Don't break the class number (unless after a specific number of digits past the d" &
+        "ecimal point)")
         Me.deweyDecimalNoBreak.UseVisualStyleBackColor = True
         '
         'TabPage10
@@ -3459,8 +3430,8 @@ Partial Class Form1
         Me.sudocType.TabIndex = 53
         Me.sudocType.Tag = "text_sudoctype"
         Me.sudocType.Text = "3"
-        Me.ToolTip1.SetToolTip(Me.sudocType, "One or more call number types (separated by commas) that will be handled by this " & _
-                "parsing routine.")
+        Me.ToolTip1.SetToolTip(Me.sudocType, "One or more call number types (separated by commas) that will be handled by this " &
+        "parsing routine.")
         '
         'Label109
         '
@@ -3723,8 +3694,8 @@ Partial Class Form1
         Me.otherType.TabIndex = 27
         Me.otherType.Tag = "text_othertype"
         Me.otherType.Text = "4,7,8"
-        Me.ToolTip1.SetToolTip(Me.otherType, "One or more call number types (separated by commas) that will be handled by this " & _
-                "parsing routine.")
+        Me.ToolTip1.SetToolTip(Me.otherType, "One or more call number types (separated by commas) that will be handled by this " &
+        "parsing routine.")
         '
         'Label110
         '
@@ -4128,8 +4099,8 @@ Partial Class Form1
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(180, 52)
         Me.Label59.TabIndex = 35
-        Me.Label59.Text = "Enter a call number and a 'type,' or select one of the samples provided. Click 't" & _
-            "est' to see how SpineOMatic will parse it. "
+        Me.Label59.Text = "Enter a call number and a 'type,' or select one of the samples provided. Click 't" &
+    "est' to see how SpineOMatic will parse it. "
         '
         'Label58
         '
@@ -4234,8 +4205,8 @@ Partial Class Form1
         Me.nonFlagDefaults.Size = New System.Drawing.Size(56, 20)
         Me.nonFlagDefaults.TabIndex = 48
         Me.nonFlagDefaults.Tag = "text_nonflagdefaults"
-        Me.nonFlagDefaults.Text = "0.1|0.1|0.2|1.0|0.0|2.0|0.0|5|8|7|9|true|<call_number>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<issue_level_description>" & _
-            "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<current_date>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<library_name>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<location_name>"
+        Me.nonFlagDefaults.Text = "0.1|0.1|0.2|1.0|0.0|2.0|0.0|5|8|7|9|true|<call_number>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<issue_level_description>" &
+    "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<current_date>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<library_name>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<location_name>"
         Me.nonFlagDefaults.Visible = False
         '
         'flagDefaults
@@ -4245,8 +4216,8 @@ Partial Class Form1
         Me.flagDefaults.Size = New System.Drawing.Size(56, 20)
         Me.flagDefaults.TabIndex = 47
         Me.flagDefaults.Tag = "text_flagdefaults"
-        Me.flagDefaults.Text = "0.5|0.1|0.2|2.7|0.0|7.0|0.0|1|4|30|50|false|!<barcode>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "~<location_name>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "%<call_" & _
-            "number>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "#<issue_level_description>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "~=<title>"
+        Me.flagDefaults.Text = "0.5|0.1|0.2|2.7|0.0|7.0|0.0|1|4|30|50|false|!<barcode>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "~<location_name>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "%<call_" &
+    "number>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "#<issue_level_description>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "~=<title>"
         Me.flagDefaults.Visible = False
         '
         'GroupBox1
@@ -4707,8 +4678,8 @@ Partial Class Form1
         Me.btn_changeALT.Size = New System.Drawing.Size(52, 20)
         Me.btn_changeALT.TabIndex = 23
         Me.btn_changeALT.Text = "Change"
-        Me.ToolTip1.SetToolTip(Me.btn_changeALT, "Change the table entry that was double clicked and modified in the yellow input b" & _
-                "ox")
+        Me.ToolTip1.SetToolTip(Me.btn_changeALT, "Change the table entry that was double clicked and modified in the yellow input b" &
+        "ox")
         Me.btn_changeALT.UseVisualStyleBackColor = True
         '
         'btn_addALT
@@ -4828,7 +4799,6 @@ Partial Class Form1
         'TabPage4
         '
         Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TabPage4.Controls.Add(Me.btnViewLicense)
         Me.TabPage4.Controls.Add(Me.btnDocDownload)
         Me.TabPage4.Controls.Add(Me.PictureBox1)
         Me.TabPage4.Controls.Add(Me.chkXMLWarning)
@@ -4842,25 +4812,13 @@ Partial Class Form1
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Current XML"
         '
-        'btnViewLicense
-        '
-        Me.btnViewLicense.Location = New System.Drawing.Point(296, 140)
-        Me.btnViewLicense.Name = "btnViewLicense"
-        Me.btnViewLicense.Size = New System.Drawing.Size(140, 28)
-        Me.btnViewLicense.TabIndex = 39
-        Me.btnViewLicense.Text = "View License Agreement"
-        Me.btnViewLicense.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.ToolTip1.SetToolTip(Me.btnViewLicense, "Displays License Agreement in Notepad")
-        Me.btnViewLicense.UseVisualStyleBackColor = True
-        Me.btnViewLicense.Visible = False
-        '
         'btnDocDownload
         '
-        Me.btnDocDownload.Location = New System.Drawing.Point(296, 72)
+        Me.btnDocDownload.Location = New System.Drawing.Point(296, 86)
         Me.btnDocDownload.Name = "btnDocDownload"
-        Me.btnDocDownload.Size = New System.Drawing.Size(140, 56)
+        Me.btnDocDownload.Size = New System.Drawing.Size(176, 40)
         Me.btnDocDownload.TabIndex = 37
-        Me.btnDocDownload.Text = "Download / view the SpineOMatic manual." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Requires MS Word)"
+        Me.btnDocDownload.Text = "View the SpineOMatic Wiki"
         Me.ToolTip1.SetToolTip(Me.btnDocDownload, "Downloads documentation and displays it in MS Word")
         Me.btnDocDownload.UseVisualStyleBackColor = True
         Me.btnDocDownload.Visible = False
@@ -4920,8 +4878,8 @@ Partial Class Form1
         Me.includeSettings.TabIndex = 41
         Me.includeSettings.Tag = "chk_includesettings"
         Me.includeSettings.Text = "Include settings"
-        Me.ToolTip1.SetToolTip(Me.includeSettings, "Check to add the text of the 'settings.som' file to the Current XML text when cop" & _
-                "ying to the clipboard.")
+        Me.ToolTip1.SetToolTip(Me.includeSettings, "Check to add the text of the 'settings.som' file to the Current XML text when cop" &
+        "ying to the clipboard.")
         Me.includeSettings.UseVisualStyleBackColor = True
         '
         'xmlCopyDone
@@ -4937,8 +4895,6 @@ Partial Class Form1
         Me.TabPage5.Controls.Add(Me.dontConvert)
         Me.TabPage5.Controls.Add(Me.xmlShell)
         Me.TabPage5.Controls.Add(Me.Label134)
-        Me.TabPage5.Controls.Add(Me.Label133)
-        Me.TabPage5.Controls.Add(Me.Label132)
         Me.TabPage5.Controls.Add(Me.Label131)
         Me.TabPage5.Controls.Add(Me.apiMethod)
         Me.TabPage5.Controls.Add(Me.Label130)
@@ -4950,23 +4906,8 @@ Partial Class Form1
         Me.TabPage5.Controls.Add(Me.updatePath)
         Me.TabPage5.Controls.Add(Me.configText)
         Me.TabPage5.Controls.Add(Me.logEdits)
-        Me.TabPage5.Controls.Add(Me.Label64)
-        Me.TabPage5.Controls.Add(Me.Label63)
-        Me.TabPage5.Controls.Add(Me.GroupBox3)
-        Me.TabPage5.Controls.Add(Me.Label7)
-        Me.TabPage5.Controls.Add(Me.inAlmaInstCode)
-        Me.TabPage5.Controls.Add(Me.Label53)
-        Me.TabPage5.Controls.Add(Me.inAlmaPassword)
-        Me.TabPage5.Controls.Add(Me.Label52)
-        Me.TabPage5.Controls.Add(Me.inAlmaUsername)
-        Me.TabPage5.Controls.Add(Me.Label51)
-        Me.TabPage5.Controls.Add(Me.inAlmaUrl)
-        Me.TabPage5.Controls.Add(Me.Label6)
         Me.TabPage5.Controls.Add(Me.XMLPath)
         Me.TabPage5.Controls.Add(Me.btnMonitor)
-        Me.TabPage5.Controls.Add(Me.WebServiceURL)
-        Me.TabPage5.Controls.Add(Me.useServlet)
-        Me.TabPage5.Controls.Add(Me.UseJavaApp)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Size = New System.Drawing.Size(528, 330)
@@ -4976,7 +4917,7 @@ Partial Class Form1
         'dontConvert
         '
         Me.dontConvert.AutoSize = True
-        Me.dontConvert.Location = New System.Drawing.Point(324, 228)
+        Me.dontConvert.Location = New System.Drawing.Point(324, 67)
         Me.dontConvert.Name = "dontConvert"
         Me.dontConvert.Size = New System.Drawing.Size(115, 17)
         Me.dontConvert.TabIndex = 72
@@ -4987,7 +4928,7 @@ Partial Class Form1
         '
         'xmlShell
         '
-        Me.xmlShell.Location = New System.Drawing.Point(448, 224)
+        Me.xmlShell.Location = New System.Drawing.Point(448, 63)
         Me.xmlShell.Multiline = True
         Me.xmlShell.Name = "xmlShell"
         Me.xmlShell.Size = New System.Drawing.Size(72, 60)
@@ -4999,37 +4940,17 @@ Partial Class Form1
         '
         Me.Label134.AutoSize = True
         Me.Label134.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label134.Location = New System.Drawing.Point(140, 228)
+        Me.Label134.Location = New System.Drawing.Point(140, 67)
         Me.Label134.Name = "Label134"
         Me.Label134.Size = New System.Drawing.Size(95, 13)
         Me.Label134.TabIndex = 69
         Me.Label134.Text = "(Java not required)"
         '
-        'Label133
-        '
-        Me.Label133.AutoSize = True
-        Me.Label133.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label133.Location = New System.Drawing.Point(448, 184)
-        Me.Label133.Name = "Label133"
-        Me.Label133.Size = New System.Drawing.Size(63, 13)
-        Me.Label133.TabIndex = 68
-        Me.Label133.Text = "(depricated)"
-        '
-        'Label132
-        '
-        Me.Label132.AutoSize = True
-        Me.Label132.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label132.Location = New System.Drawing.Point(180, 16)
-        Me.Label132.Name = "Label132"
-        Me.Label132.Size = New System.Drawing.Size(63, 13)
-        Me.Label132.TabIndex = 67
-        Me.Label132.Text = "(depricated)"
-        '
         'Label131
         '
         Me.Label131.AutoSize = True
         Me.Label131.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label131.Location = New System.Drawing.Point(88, 272)
+        Me.Label131.Location = New System.Drawing.Point(88, 111)
         Me.Label131.Name = "Label131"
         Me.Label131.Size = New System.Drawing.Size(52, 15)
         Me.Label131.TabIndex = 66
@@ -5037,7 +4958,7 @@ Partial Class Form1
         '
         'apiMethod
         '
-        Me.apiMethod.Location = New System.Drawing.Point(144, 272)
+        Me.apiMethod.Location = New System.Drawing.Point(144, 111)
         Me.apiMethod.Name = "apiMethod"
         Me.apiMethod.Size = New System.Drawing.Size(296, 20)
         Me.apiMethod.TabIndex = 65
@@ -5049,7 +4970,7 @@ Partial Class Form1
         '
         Me.Label130.AutoSize = True
         Me.Label130.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label130.Location = New System.Drawing.Point(68, 248)
+        Me.Label130.Location = New System.Drawing.Point(68, 87)
         Me.Label130.Name = "Label130"
         Me.Label130.Size = New System.Drawing.Size(70, 15)
         Me.Label130.TabIndex = 64
@@ -5059,7 +4980,7 @@ Partial Class Form1
         '
         Me.Label129.AutoSize = True
         Me.Label129.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label129.Location = New System.Drawing.Point(88, 296)
+        Me.Label129.Location = New System.Drawing.Point(88, 135)
         Me.Label129.Name = "Label129"
         Me.Label129.Size = New System.Drawing.Size(51, 15)
         Me.Label129.TabIndex = 63
@@ -5067,7 +4988,7 @@ Partial Class Form1
         '
         'apiKey
         '
-        Me.apiKey.Location = New System.Drawing.Point(144, 296)
+        Me.apiKey.Location = New System.Drawing.Point(144, 135)
         Me.apiKey.Name = "apiKey"
         Me.apiKey.Size = New System.Drawing.Size(296, 20)
         Me.apiKey.TabIndex = 62
@@ -5077,7 +4998,7 @@ Partial Class Form1
         '
         'apiURL
         '
-        Me.apiURL.Location = New System.Drawing.Point(144, 248)
+        Me.apiURL.Location = New System.Drawing.Point(144, 87)
         Me.apiURL.Name = "apiURL"
         Me.apiURL.Size = New System.Drawing.Size(296, 20)
         Me.apiURL.TabIndex = 61
@@ -5088,11 +5009,13 @@ Partial Class Form1
         'UseRestfulApi
         '
         Me.UseRestfulApi.AutoSize = True
+        Me.UseRestfulApi.Checked = True
         Me.UseRestfulApi.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UseRestfulApi.Location = New System.Drawing.Point(4, 224)
+        Me.UseRestfulApi.Location = New System.Drawing.Point(4, 63)
         Me.UseRestfulApi.Name = "UseRestfulApi"
         Me.UseRestfulApi.Size = New System.Drawing.Size(131, 19)
         Me.UseRestfulApi.TabIndex = 60
+        Me.UseRestfulApi.TabStop = True
         Me.UseRestfulApi.Tag = "radio_useRESTful"
         Me.UseRestfulApi.Text = "Use RESTful API"
         Me.UseRestfulApi.UseVisualStyleBackColor = True
@@ -5100,7 +5023,7 @@ Partial Class Form1
         'ispList
         '
         Me.ispList.FormattingEnabled = True
-        Me.ispList.Location = New System.Drawing.Point(448, 284)
+        Me.ispList.Location = New System.Drawing.Point(448, 123)
         Me.ispList.Name = "ispList"
         Me.ispList.Size = New System.Drawing.Size(72, 17)
         Me.ispList.Sorted = True
@@ -5129,7 +5052,7 @@ Partial Class Form1
         '
         'logEdits
         '
-        Me.logEdits.Location = New System.Drawing.Point(448, 308)
+        Me.logEdits.Location = New System.Drawing.Point(448, 147)
         Me.logEdits.Name = "logEdits"
         Me.logEdits.Size = New System.Drawing.Size(68, 17)
         Me.logEdits.TabIndex = 38
@@ -5139,167 +5062,9 @@ Partial Class Form1
         Me.logEdits.UseVisualStyleBackColor = True
         Me.logEdits.Visible = False
         '
-        'Label64
-        '
-        Me.Label64.AutoSize = True
-        Me.Label64.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label64.ForeColor = System.Drawing.Color.Blue
-        Me.Label64.Location = New System.Drawing.Point(32, 116)
-        Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(147, 15)
-        Me.Label64.TabIndex = 37
-        Me.Label64.Text = "Your Alma Web Service account::"
-        '
-        'Label63
-        '
-        Me.Label63.AutoSize = True
-        Me.Label63.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.ForeColor = System.Drawing.Color.Blue
-        Me.Label63.Location = New System.Drawing.Point(32, 60)
-        Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(86, 15)
-        Me.Label63.TabIndex = 36
-        Me.Label63.Text = "Ex Libris provides:"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Controls.Add(Me.javaCheck)
-        Me.GroupBox3.Controls.Add(Me.javabox)
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(300, 12)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(216, 156)
-        Me.GroupBox3.TabIndex = 0
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Check for Java"
-        '
-        'Label1
-        '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(64, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(144, 44)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "to see if java is installed on your computer and is available for use."
-        '
-        'javaCheck
-        '
-        Me.javaCheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.javaCheck.Location = New System.Drawing.Point(8, 20)
-        Me.javaCheck.Name = "javaCheck"
-        Me.javaCheck.Size = New System.Drawing.Size(52, 20)
-        Me.javaCheck.TabIndex = 1
-        Me.javaCheck.TabStop = False
-        Me.javaCheck.Text = "Check"
-        Me.ToolTip1.SetToolTip(Me.javaCheck, "Click to see whether java is installed and functioning on your computer.")
-        Me.javaCheck.UseVisualStyleBackColor = True
-        '
-        'javabox
-        '
-        Me.javabox.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.javabox.Location = New System.Drawing.Point(8, 60)
-        Me.javabox.Multiline = True
-        Me.javabox.Name = "javabox"
-        Me.javabox.Size = New System.Drawing.Size(200, 88)
-        Me.javabox.TabIndex = 0
-        Me.javabox.TabStop = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(24, 40)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(229, 13)
-        Me.Label7.TabIndex = 31
-        Me.Label7.Text = "Label Printing Web Service Credentials"
-        '
-        'inAlmaInstCode
-        '
-        Me.inAlmaInstCode.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.inAlmaInstCode.Location = New System.Drawing.Point(120, 96)
-        Me.inAlmaInstCode.Name = "inAlmaInstCode"
-        Me.inAlmaInstCode.Size = New System.Drawing.Size(172, 13)
-        Me.inAlmaInstCode.TabIndex = 21
-        Me.inAlmaInstCode.Tag = "text_almainstcode"
-        Me.ToolTip1.SetToolTip(Me.inAlmaInstCode, "Ex Libris-provided institution code")
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label53.Location = New System.Drawing.Point(29, 96)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(83, 13)
-        Me.Label53.TabIndex = 29
-        Me.Label53.Text = "Institution Code:"
-        '
-        'inAlmaPassword
-        '
-        Me.inAlmaPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.inAlmaPassword.Location = New System.Drawing.Point(120, 152)
-        Me.inAlmaPassword.Name = "inAlmaPassword"
-        Me.inAlmaPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.inAlmaPassword.Size = New System.Drawing.Size(172, 13)
-        Me.inAlmaPassword.TabIndex = 23
-        Me.inAlmaPassword.Tag = "texo_almapassword"
-        Me.ToolTip1.SetToolTip(Me.inAlmaPassword, "Password associated with the user name")
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(60, 152)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(56, 13)
-        Me.Label52.TabIndex = 27
-        Me.Label52.Text = "Password:"
-        '
-        'inAlmaUsername
-        '
-        Me.inAlmaUsername.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.inAlmaUsername.Location = New System.Drawing.Point(120, 132)
-        Me.inAlmaUsername.Name = "inAlmaUsername"
-        Me.inAlmaUsername.Size = New System.Drawing.Size(172, 13)
-        Me.inAlmaUsername.TabIndex = 22
-        Me.inAlmaUsername.Tag = "text_almausername"
-        Me.ToolTip1.SetToolTip(Me.inAlmaUsername, "Alma user name authorized to use Alma Label Printing Web Service")
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.Location = New System.Drawing.Point(52, 132)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(63, 13)
-        Me.Label51.TabIndex = 25
-        Me.Label51.Text = "User Name:"
-        '
-        'inAlmaUrl
-        '
-        Me.inAlmaUrl.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.inAlmaUrl.Location = New System.Drawing.Point(119, 76)
-        Me.inAlmaUrl.Name = "inAlmaUrl"
-        Me.inAlmaUrl.Size = New System.Drawing.Size(172, 13)
-        Me.inAlmaUrl.TabIndex = 20
-        Me.inAlmaUrl.Tag = "text_inalmaurl"
-        Me.inAlmaUrl.Text = "http://???.com"
-        Me.ToolTip1.SetToolTip(Me.inAlmaUrl, "URL to Alma server (http://alma.exlibrisgourp.com or similar)")
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(54, 76)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(58, 13)
-        Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Alma URL:"
-        '
         'XMLPath
         '
-        Me.XMLPath.Location = New System.Drawing.Point(480, 200)
+        Me.XMLPath.Location = New System.Drawing.Point(480, 39)
         Me.XMLPath.Name = "XMLPath"
         Me.XMLPath.Size = New System.Drawing.Size(40, 20)
         Me.XMLPath.TabIndex = 0
@@ -5310,7 +5075,7 @@ Partial Class Form1
         '
         'btnMonitor
         '
-        Me.btnMonitor.Location = New System.Drawing.Point(4, 276)
+        Me.btnMonitor.Location = New System.Drawing.Point(4, 115)
         Me.btnMonitor.Name = "btnMonitor"
         Me.btnMonitor.Size = New System.Drawing.Size(39, 20)
         Me.btnMonitor.TabIndex = 0
@@ -5319,41 +5084,6 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.btnMonitor, "Tell the java app and the local PC to communicate via this folder")
         Me.btnMonitor.UseVisualStyleBackColor = True
         Me.btnMonitor.Visible = False
-        '
-        'WebServiceURL
-        '
-        Me.WebServiceURL.Location = New System.Drawing.Point(144, 180)
-        Me.WebServiceURL.Name = "WebServiceURL"
-        Me.WebServiceURL.Size = New System.Drawing.Size(296, 20)
-        Me.WebServiceURL.TabIndex = 14
-        Me.WebServiceURL.Tag = "text_webserviceurl"
-        Me.ToolTip1.SetToolTip(Me.WebServiceURL, "URL to java servlet that obtains Alma item XML")
-        '
-        'useServlet
-        '
-        Me.useServlet.AutoSize = True
-        Me.useServlet.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.useServlet.Location = New System.Drawing.Point(4, 181)
-        Me.useServlet.Name = "useServlet"
-        Me.useServlet.Size = New System.Drawing.Size(138, 19)
-        Me.useServlet.TabIndex = 1
-        Me.useServlet.Tag = "radio_useservlet"
-        Me.useServlet.Text = "Use Servlet, URL:"
-        Me.useServlet.UseVisualStyleBackColor = True
-        '
-        'UseJavaApp
-        '
-        Me.UseJavaApp.AutoSize = True
-        Me.UseJavaApp.Checked = True
-        Me.UseJavaApp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UseJavaApp.Location = New System.Drawing.Point(4, 12)
-        Me.UseJavaApp.Name = "UseJavaApp"
-        Me.UseJavaApp.Size = New System.Drawing.Size(167, 19)
-        Me.UseJavaApp.TabIndex = 0
-        Me.UseJavaApp.TabStop = True
-        Me.UseJavaApp.Tag = "radio_usejavaapp"
-        Me.UseJavaApp.Text = "Use Desktop Java App"
-        Me.UseJavaApp.UseVisualStyleBackColor = True
         '
         'TabPage6
         '
@@ -5798,7 +5528,7 @@ Partial Class Form1
         '
         Me.Label47.AutoSize = True
         Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType(((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic) _
-                        Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+                Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label47.Location = New System.Drawing.Point(708, 8)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(40, 13)
@@ -5868,8 +5598,8 @@ Partial Class Form1
         Me.lblXMLWarn.Size = New System.Drawing.Size(38, 15)
         Me.lblXMLWarn.TabIndex = 53
         Me.lblXMLWarn.Text = "XML!"
-        Me.ToolTip1.SetToolTip(Me.lblXMLWarn, "Warns if an XML field is invalid.  Click the 'XML!' symbol to see which field(s) " & _
-                "caused the error.")
+        Me.ToolTip1.SetToolTip(Me.lblXMLWarn, "Warns if an XML field is invalid.  Click the 'XML!' symbol to see which field(s) " &
+        "caused the error.")
         Me.lblXMLWarn.Visible = False
         '
         'lblToggleAdmin
@@ -6040,75 +5770,6 @@ Partial Class Form1
         Me.printProgress.TabIndex = 35
         Me.printProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.printProgress.Visible = False
-        '
-        'licenseAgreement
-        '
-        Me.licenseAgreement.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.licenseAgreement.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.licenseAgreement.Location = New System.Drawing.Point(8, 44)
-        Me.licenseAgreement.Multiline = True
-        Me.licenseAgreement.Name = "licenseAgreement"
-        Me.licenseAgreement.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.licenseAgreement.Size = New System.Drawing.Size(744, 244)
-        Me.licenseAgreement.TabIndex = 40
-        Me.licenseAgreement.Text = resources.GetString("licenseAgreement.Text")
-        '
-        'licensePanel
-        '
-        Me.licensePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.licensePanel.Controls.Add(Me.TextBox1)
-        Me.licensePanel.Controls.Add(Me.cancelAgreement)
-        Me.licensePanel.Controls.Add(Me.acceptAgreement)
-        Me.licensePanel.Controls.Add(Me.licenseHeadline)
-        Me.licensePanel.Controls.Add(Me.licenseAgreement)
-        Me.licensePanel.Location = New System.Drawing.Point(0, 0)
-        Me.licensePanel.Name = "licensePanel"
-        Me.licensePanel.Size = New System.Drawing.Size(16, 48)
-        Me.licensePanel.TabIndex = 56
-        Me.licensePanel.Visible = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(156, 308)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(448, 68)
-        Me.TextBox1.TabIndex = 43
-        Me.TextBox1.Text = resources.GetString("TextBox1.Text")
-        '
-        'cancelAgreement
-        '
-        Me.cancelAgreement.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cancelAgreement.Location = New System.Drawing.Point(420, 380)
-        Me.cancelAgreement.Name = "cancelAgreement"
-        Me.cancelAgreement.Size = New System.Drawing.Size(76, 24)
-        Me.cancelAgreement.TabIndex = 42
-        Me.cancelAgreement.Text = "I decline"
-        Me.cancelAgreement.UseVisualStyleBackColor = True
-        '
-        'acceptAgreement
-        '
-        Me.acceptAgreement.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.acceptAgreement.Location = New System.Drawing.Point(272, 380)
-        Me.acceptAgreement.Name = "acceptAgreement"
-        Me.acceptAgreement.Size = New System.Drawing.Size(76, 24)
-        Me.acceptAgreement.TabIndex = 41
-        Me.acceptAgreement.Text = "I agree"
-        Me.acceptAgreement.UseVisualStyleBackColor = True
-        '
-        'licenseHeadline
-        '
-        Me.licenseHeadline.AutoSize = True
-        Me.licenseHeadline.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.licenseHeadline.ForeColor = System.Drawing.Color.Black
-        Me.licenseHeadline.Location = New System.Drawing.Point(220, 12)
-        Me.licenseHeadline.Name = "licenseHeadline"
-        Me.licenseHeadline.Size = New System.Drawing.Size(271, 20)
-        Me.licenseHeadline.TabIndex = 0
-        Me.licenseHeadline.Text = "SpineOMatic License Agreement"
         '
         'RadioButton1
         '
@@ -6287,10 +5948,10 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(757, 415)
+        Me.ClientSize = New System.Drawing.Size(757, 414)
         Me.Controls.Add(Me.xboxPanel)
-        Me.Controls.Add(Me.licensePanel)
         Me.Controls.Add(Me.Panel19)
         Me.Controls.Add(Me.Panel18)
         Me.Controls.Add(Me.printProgress)
@@ -6414,8 +6075,6 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
         Me.sortBox.ResumeLayout(False)
@@ -6423,8 +6082,6 @@ Partial Class Form1
         CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FileSystemWatcher2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LabelRepeat, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.licensePanel.ResumeLayout(False)
-        Me.licensePanel.PerformLayout()
         Me.Panel18.ResumeLayout(False)
         Me.Panel18.PerformLayout()
         Me.Panel19.ResumeLayout(False)
@@ -6567,20 +6224,8 @@ Partial Class Form1
     Friend WithEvents useExlibrisParsing As System.Windows.Forms.RadioButton
     Friend WithEvents chkIncludeHoldings As System.Windows.Forms.CheckBox
     Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
-    Friend WithEvents useServlet As System.Windows.Forms.RadioButton
-    Friend WithEvents UseJavaApp As System.Windows.Forms.RadioButton
     Friend WithEvents XMLPath As System.Windows.Forms.TextBox
     Friend WithEvents btnMonitor As System.Windows.Forms.Button
-    Friend WithEvents WebServiceURL As System.Windows.Forms.TextBox
-    Friend WithEvents inAlmaPassword As System.Windows.Forms.TextBox
-    Friend WithEvents Label52 As System.Windows.Forms.Label
-    Friend WithEvents inAlmaUsername As System.Windows.Forms.TextBox
-    Friend WithEvents Label51 As System.Windows.Forms.Label
-    Friend WithEvents inAlmaUrl As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents inAlmaInstCode As System.Windows.Forms.TextBox
-    Friend WithEvents Label53 As System.Windows.Forms.Label
     Friend WithEvents altURL As System.Windows.Forms.TextBox
     Friend WithEvents altText As System.Windows.Forms.TextBox
     Friend WithEvents btn_saveALT As System.Windows.Forms.Button
@@ -6627,17 +6272,11 @@ Partial Class Form1
     Friend WithEvents nonFlagDefaults As System.Windows.Forms.TextBox
     Friend WithEvents flagDefaults As System.Windows.Forms.TextBox
     Friend WithEvents tips As System.Windows.Forms.CheckBox
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents javaCheck As System.Windows.Forms.Button
-    Friend WithEvents javabox As System.Windows.Forms.TextBox
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents Label32 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents inStartCol As System.Windows.Forms.TextBox
     Friend WithEvents inStartRow As System.Windows.Forms.TextBox
-    Friend WithEvents Label64 As System.Windows.Forms.Label
-    Friend WithEvents Label63 As System.Windows.Forms.Label
     Friend WithEvents chkGeoList As System.Windows.Forms.CheckBox
     Friend WithEvents tweakParsingPanel As System.Windows.Forms.Panel
     Friend WithEvents Label71 As System.Windows.Forms.Label
@@ -6818,13 +6457,6 @@ Partial Class Form1
     Friend WithEvents pocketDefaults As System.Windows.Forms.TextBox
     Friend WithEvents printProgress As System.Windows.Forms.Label
     Friend WithEvents configText As System.Windows.Forms.TextBox
-    Friend WithEvents licenseAgreement As System.Windows.Forms.TextBox
-    Friend WithEvents licensePanel As System.Windows.Forms.Panel
-    Friend WithEvents licenseHeadline As System.Windows.Forms.Label
-    Friend WithEvents cancelAgreement As System.Windows.Forms.Button
-    Friend WithEvents acceptAgreement As System.Windows.Forms.Button
-    Friend WithEvents btnViewLicense As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents spaceBreak As System.Windows.Forms.CheckBox
     Friend WithEvents lbl_setclipboard As System.Windows.Forms.Label
     Friend WithEvents copyDone As System.Windows.Forms.Label
@@ -6916,8 +6548,6 @@ Partial Class Form1
     Friend WithEvents Label130 As System.Windows.Forms.Label
     Friend WithEvents Label131 As System.Windows.Forms.Label
     Friend WithEvents apiMethod As System.Windows.Forms.TextBox
-    Friend WithEvents Label132 As System.Windows.Forms.Label
-    Friend WithEvents Label133 As System.Windows.Forms.Label
     Friend WithEvents Label134 As System.Windows.Forms.Label
     Friend WithEvents xmlShell As System.Windows.Forms.TextBox
     Friend WithEvents accessType As System.Windows.Forms.Label
