@@ -24,6 +24,3 @@ Download [`SpineLabeler.exe`](https://github.com/BCLibraries/SpineOMatic/release
 The User's Manual can also be downloaded and viewed from SpineOMatic's "About" box. It contains a Quick Start guide that will help you get SpineOMatic installed quickly and easily.
 
 
-## Disclaimer
-
-SpineOMatic is provided free of charge to the Ex Libris Alma user community. It is offered without warranty of any kind. Use it at your own risk. Neither the Trustees of Boston College, nor the agents or employees of Boston College, are liable for damages of any kind resulting from the running of this software or using the information it produces.
