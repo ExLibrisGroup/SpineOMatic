@@ -4447,9 +4447,9 @@ Partial Class Form1
         Me.formatInfoPanel.Controls.Add(Me.wrapWidth)
         Me.formatInfoPanel.Controls.Add(Me.closeFormatInfo)
         Me.formatInfoPanel.Controls.Add(Me.Label45)
-        Me.formatInfoPanel.Location = New System.Drawing.Point(376, 168)
+        Me.formatInfoPanel.Location = New System.Drawing.Point(376, 131)
         Me.formatInfoPanel.Name = "formatInfoPanel"
-        Me.formatInfoPanel.Size = New System.Drawing.Size(148, 160)
+        Me.formatInfoPanel.Size = New System.Drawing.Size(148, 197)
         Me.formatInfoPanel.TabIndex = 63
         Me.formatInfoPanel.Visible = False
         '
@@ -4458,7 +4458,7 @@ Partial Class Form1
         Me.suppress3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.suppress3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.suppress3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.suppress3.Location = New System.Drawing.Point(108, 136)
+        Me.suppress3.Location = New System.Drawing.Point(108, 170)
         Me.suppress3.Margin = New System.Windows.Forms.Padding(0)
         Me.suppress3.Name = "suppress3"
         Me.suppress3.Size = New System.Drawing.Size(32, 13)
@@ -4472,7 +4472,7 @@ Partial Class Form1
         Me.suppress2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.suppress2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.suppress2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.suppress2.Location = New System.Drawing.Point(68, 136)
+        Me.suppress2.Location = New System.Drawing.Point(68, 170)
         Me.suppress2.Margin = New System.Windows.Forms.Padding(0)
         Me.suppress2.Name = "suppress2"
         Me.suppress2.Size = New System.Drawing.Size(32, 13)
@@ -4486,7 +4486,7 @@ Partial Class Form1
         Me.suppress1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.suppress1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.suppress1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.suppress1.Location = New System.Drawing.Point(28, 136)
+        Me.suppress1.Location = New System.Drawing.Point(28, 170)
         Me.suppress1.Margin = New System.Windows.Forms.Padding(0)
         Me.suppress1.Name = "suppress1"
         Me.suppress1.Size = New System.Drawing.Size(32, 13)
@@ -4500,7 +4500,7 @@ Partial Class Form1
         '
         Me.wrapWidth.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.wrapWidth.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.wrapWidth.Location = New System.Drawing.Point(116, 32)
+        Me.wrapWidth.Location = New System.Drawing.Point(116, 45)
         Me.wrapWidth.Name = "wrapWidth"
         Me.wrapWidth.Size = New System.Drawing.Size(32, 13)
         Me.wrapWidth.TabIndex = 51
@@ -4515,7 +4515,7 @@ Partial Class Form1
         Me.closeFormatInfo.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.closeFormatInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.closeFormatInfo.ForeColor = System.Drawing.Color.White
-        Me.closeFormatInfo.Location = New System.Drawing.Point(128, 0)
+        Me.closeFormatInfo.Location = New System.Drawing.Point(131, 0)
         Me.closeFormatInfo.Name = "closeFormatInfo"
         Me.closeFormatInfo.Size = New System.Drawing.Size(16, 15)
         Me.closeFormatInfo.TabIndex = 62
@@ -4524,10 +4524,10 @@ Partial Class Form1
         'Label45
         '
         Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(4, 4)
+        Me.Label45.Location = New System.Drawing.Point(6, 6)
         Me.Label45.Margin = New System.Windows.Forms.Padding(3)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(140, 152)
+        Me.Label45.Size = New System.Drawing.Size(140, 159)
         Me.Label45.TabIndex = 43
         Me.Label45.Text = resources.GetString("Label45.Text")
         '
@@ -4848,7 +4848,7 @@ Partial Class Form1
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Font = New System.Drawing.Font("Arial Unicode MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox1.ForeColor = System.Drawing.Color.Red
         Me.RichTextBox1.Location = New System.Drawing.Point(4, 24)
         Me.RichTextBox1.Name = "RichTextBox1"
@@ -5948,7 +5948,6 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(757, 414)
         Me.Controls.Add(Me.xboxPanel)

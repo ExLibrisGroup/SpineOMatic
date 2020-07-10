@@ -172,7 +172,7 @@ Public Class Form1
     'v. 2.3: dlgSettings.UseEXDialog = True to enable print dialog selection in Windows 7
     'v. 2.2: corrects spacing & punctuation errors in incoming call numbers (for TML);
     'v. ...: 
-    Dim somVersion As String = "8.0.0"
+    Dim somVersion As String = "8.1.0"
     Dim javaClassName As String = "almalabelu2" 'the java class name
     Dim javaSDKName As String = "alma-sdk.1.0.jar" 'the Ex Libris SDK for web services
     Dim javaTest As String = "javatest" 'java class that reports presence and version of java
@@ -1814,6 +1814,7 @@ Boolean = True) As String
         End If
 
         Dim i As Integer = 0
+        Dim j As Integer = 0
         Dim cf As String = ""
         Dim custom As Array
         Dim fmt As String = ""
@@ -1829,6 +1830,7 @@ Boolean = True) As String
         Dim qlen As Integer = 0
         Dim charWrap As Integer = 0
         Dim s1, s2, s3 As String
+        Dim stringLength As Integer = 0
 
         fields = fields.Replace("><", "/")
 
@@ -1849,7 +1851,20 @@ Boolean = True) As String
                     fmtreturn = getFmt(Trim(cf.Substring(0, bg)))
                     fmt = fmtreturn(0)
                     cf = cf.Substring(bg, nd - bg + 1)
-                    fldval = xmlValue(cf)
+                    If fmt.Contains("*") Then
+                        fldval = xmlValue(cf, True)
+                    Else
+                        fldval = xmlValue(cf)
+                    End If
+                    stringLength = 0
+                    For j = 0 To fmt.Length - 1
+                        If "123456789".Contains(fmt(j)) Then
+                            stringLength = Convert.ToInt32(fmt.Substring(j, 1))
+                        End If
+                    Next
+                    If (fldval.Length > 0 And fldval.Length > stringLength) And stringLength > 0 Then
+                        fldval = fldval.Substring(0, stringLength)
+                    End If
                     txt = fmtreturn(1) & fldval
                 Else 'if this is a free-text string
                     fmtreturn = getFmt(cf)
@@ -1945,7 +1960,7 @@ Boolean = True) As String
 
         For i = 1 To argnoquot.Length
             c = Mid$(argnoquot, i, 1)
-            If "~=!#%^*+".Contains(c) Then
+            If "~=!#%^*+".Contains(c) Or "123456789".Contains(c) Then
                 fmt = fmt & c
             Else
                 Exit For
@@ -3243,7 +3258,7 @@ Boolean = True) As String
 
     Private Sub openSettings()
         'expand user interface box to make administrative panels visible
-        Me.Size = New Size(760, 442)
+        Me.Size = New Size(770, 453)
         settingsOpen = True
         lblToggleAdmin.Text = "t"
         InputBox.Focus()
@@ -3840,7 +3855,7 @@ Boolean = True) As String
 
     Private Sub CloseSettings() '_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseSettings.Click
         'reduce the size of the user interface box to hide the administrative panels
-        Me.Size = New Size(223, 442)
+        Me.Size = New Size(233, 453)
         settingsOpen = False
         lblToggleAdmin.Text = "u"
         InputBox.Focus()
@@ -4656,7 +4671,7 @@ Boolean = True) As String
         If pos1 = -1 Or pos2 = -1 Then Return "?"
         Return t.Substring(pos1, pos2 - pos1)
     End Function
-    Private Function xmlValue(ByVal node_in) As String
+    Private Function xmlValue(ByVal node_in, Optional okToSkip = False) As String
         Dim xfield As String = ""
         Dim prefix As String = ""
         Dim orig_node As String = node_in.ToString
@@ -4671,6 +4686,10 @@ Boolean = True) As String
         Catch ex As Exception
             If Not node.Contains("parsed_") Then 'call_number") Then
 
+                If ex.Message.Contains("Object reference not set") And okToSkip Then
+                    'Return empty string; it is ok if this element doesn't exist in the XML.
+                    Return ""
+                End If
                 Beep()
                 If ex.Message.Contains("Object reference not set") Then
                     er = orig_node & " is not in the XML record."
@@ -5118,10 +5137,12 @@ Boolean = True) As String
 
     Private Sub closeFormatInfo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles closeFormatInfo.Click
         formatInfoPanel.Visible = False
+        formatInfoPanel.SendToBack()
     End Sub
 
     Private Sub showFormatInfo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles showFormatInfo.Click
         formatInfoPanel.Visible = True
+        formatInfoPanel.BringToFront()
         formatInfoPanel.Focus()
     End Sub
 

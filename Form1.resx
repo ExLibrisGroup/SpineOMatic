@@ -129,7 +129,8 @@ The several lines of #LABELTEXT# are then inserted into the "Label Format
 Commands" at the point indicated, and the block is then sent to the printer.</value>
   </data>
   <data name="Label45.Text" xml:space="preserve">
-    <value>~   add blank line
+    <value>1 - 9 number of chars
+~   add blank line
  !    print barcode
 =   wrap to label width:
 %   parse call number
@@ -137,8 +138,9 @@ Commands" at the point indicated, and the block is then sent to the printer.</va
 ^    no line break after field
 ".." prepend quoted text
 +    use Label Prefix, if any
- *    suppress if field is blank,
-       or if it has value(s):</value>
+*    suppress if field is blank,
+      if it does not exist,
+      or if it has value(s):</value>
   </data>
   <data name="xmlShell.Text" xml:space="preserve">
     <value>&lt;?xml version="1.0" ?&gt;
