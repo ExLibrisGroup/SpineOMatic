@@ -1621,7 +1621,9 @@ Public Class Form1
                 End While
             End With
         Catch ex As Exception
-            MsgBox("error: " & ex.ToString)
+            If Not ex.ToString.Contains("Font prototype, FontStyle newStyle") Then
+                MsgBox("error: " & ex.ToString)
+            End If
         End Try
     End Sub
     Private Function StripControlChars(ByVal source As String, Optional ByVal KeepCRLF As _
