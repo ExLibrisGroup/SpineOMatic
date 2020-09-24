@@ -1215,7 +1215,7 @@ Public Class Form1
         End If
 
         fixedBarcode = Replace(Trim(InputBox.Text), "+", "%2B")
-        svcRequest = apiURL.Text & apiMethod.Text.Replace("{item_barcode}", fixedBarcode) & "&apikey=" & apiKey.Text
+        svcRequest = Trim(apiURL.Text) & Trim(apiMethod.Text.Replace("{item_barcode}", fixedBarcode)) & "&apikey=" & Trim(apiKey.Text)
 
         lastbc = InputBox.Text
         addToHistory = True
