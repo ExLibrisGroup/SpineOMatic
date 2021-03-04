@@ -172,7 +172,7 @@ Public Class Form1
     'v. 2.3: dlgSettings.UseEXDialog = True to enable print dialog selection in Windows 7
     'v. 2.2: corrects spacing & punctuation errors in incoming call numbers (for TML);
     'v. ...: 
-    Dim somVersion As String = "8.1.0"
+    Dim somVersion As String = "8.1.1"
     Dim javaClassName As String = "almalabelu2" 'the java class name
     Dim javaSDKName As String = "alma-sdk.1.0.jar" 'the Ex Libris SDK for web services
     Dim javaTest As String = "javatest" 'java class that reports presence and version of java
@@ -1859,11 +1859,15 @@ Boolean = True) As String
                         fldval = xmlValue(cf)
                     End If
                     stringLength = 0
+                    Dim stringLengthString As String : stringLengthString = vbNullString
                     For j = 0 To fmt.Length - 1
-                        If "123456789".Contains(fmt(j)) Then
-                            stringLength = Convert.ToInt32(fmt.Substring(j, 1))
+                        If "0123456789".Contains(fmt(j)) Then
+                            stringLengthString += fmt.Substring(j, 1)
                         End If
                     Next
+                    If stringLengthString IsNot vbNullString Then
+                        stringLength = Convert.ToInt32(stringLengthString)
+                    End If
                     If (fldval.Length > 0 And fldval.Length > stringLength) And stringLength > 0 Then
                         fldval = fldval.Substring(0, stringLength)
                     End If
@@ -1962,7 +1966,7 @@ Boolean = True) As String
 
         For i = 1 To argnoquot.Length
             c = Mid$(argnoquot, i, 1)
-            If "~=!#%^*+".Contains(c) Or "123456789".Contains(c) Then
+            If "~=!#%^*+".Contains(c) Or "0123456789".Contains(c) Then
                 fmt = fmt & c
             Else
                 Exit For
