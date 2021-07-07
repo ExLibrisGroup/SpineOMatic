@@ -172,7 +172,7 @@ Public Class Form1
     'v. 2.3: dlgSettings.UseEXDialog = True to enable print dialog selection in Windows 7
     'v. 2.2: corrects spacing & punctuation errors in incoming call numbers (for TML);
     'v. ...: 
-    Dim somVersion As String = "8.1.1"
+    Dim somVersion As String = "8.1.2"
     Dim javaClassName As String = "almalabelu2" 'the java class name
     Dim javaSDKName As String = "alma-sdk.1.0.jar" 'the Ex Libris SDK for web services
     Dim javaTest As String = "javatest" 'java class that reports presence and version of java
@@ -1214,7 +1214,8 @@ Public Class Form1
             Exit Sub
         End If
 
-        fixedBarcode = Replace(Trim(InputBox.Text), "+", "%2B")
+        fixedBarcode = Replace(InputBox.Text, "+", "%2B")
+        fixedBarcode = Replace(fixedBarcode, " ", "%20")
         svcRequest = Trim(apiURL.Text) & Trim(apiMethod.Text.Replace("{item_barcode}", fixedBarcode)) & "&apikey=" & Trim(apiKey.Text)
 
         lastbc = InputBox.Text
