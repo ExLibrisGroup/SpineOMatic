@@ -21,6 +21,6 @@ Credentials to access the Alma Label Print Web Service, including the path to th
 
 Download [`SpineLabeler.exe`](https://github.com/ExLibrisGroup/SpineOMatic/releases/tag/v8.0.0) into an empty directory. Click the application to launch.
 
-The User's Manual can also be downloaded and viewed from SpineOMatic's "About" box. It contains a Quick Start guide that will help you get SpineOMatic installed quickly and easily.
+The User's Manual is available [here](https://github.com/ExLibrisGroup/SpineOMatic/wiki). There is also a link to the Wiki in the SpineOMatic "About" box. It contains a Quick Start guide that will help you get SpineOMatic installed quickly and easily.
 
 
