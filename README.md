@@ -12,7 +12,7 @@ SpineOMatic is a Windows application that works with Ex Libris' Alma to print sp
 ## System Requirements
 An installation of Ex Libris' Alma
 Credentials to access the Alma Label Print Web Service, including the path to the Alma server, an authorized user name, password and Ex Libris Institution Code
-* A PC running Windows 7(preferred), Vista or XP.
+* A PC running Windows XP or newer.
 * An up-to-date version of the .Net Framework (4 or higher)
 * An up-to-date version of Java (1.7.xx or higher) is required to use the deprecated "SOAP" access method.
 * An API key from Ex Libris
