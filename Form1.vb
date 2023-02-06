@@ -172,7 +172,7 @@ Public Class Form1
     'v. 2.3: dlgSettings.UseEXDialog = True to enable print dialog selection in Windows 7
     'v. 2.2: corrects spacing & punctuation errors in incoming call numbers (for TML);
     'v. ...: 
-    Dim somVersion As String = "8.1.2"
+    Dim somVersion As String = "8.1.2-flvc"
     Dim javaClassName As String = "almalabelu2" 'the java class name
     Dim javaSDKName As String = "alma-sdk.1.0.jar" 'the Ex Libris SDK for web services
     Dim javaTest As String = "javatest" 'java class that reports presence and version of java
@@ -2643,18 +2643,26 @@ Boolean = True) As String
         Dim i As Integer = 1
         If xmlsource = "<parsed_issue_level_description>" Then
             prefix = "<issue_level_description_"
+            Do
+                buildLC = xmlValue(xmlsource & prefix & i & ">")
+                If buildLC = "" Then Exit Do
+                If i <> 1 Then callout = callout & vbCrLf
+                callout = callout & buildLC
+                i = i + 1
+            Loop
         Else
             prefix = "<call_no_"
+            Do
+                buildLC = xmlValue(xmlsource & prefix & i & ">")
+                If buildLC = "" Then
+                    If i <> 1 Then Exit Do
+                Else
+                    If callout <> "" Then callout = callout & vbCrLf
+                    callout = callout & buildLC
+                End If
+                i = i + 1
+            Loop
         End If
-
-        Do
-            'buildLC = xmlValue(xmlsource & "<call_no_" & i & ">")
-            buildLC = xmlValue(xmlsource & prefix & i & ">")
-            If buildLC = "" Then Exit Do
-            If i <> 1 Then callout = callout & vbCrLf
-            callout = callout & buildLC
-            i = i + 1
-        Loop
         Return callout.Replace(vbCrLf & vbCrLf, vbCrLf)
     End Function
 
