@@ -15,7 +15,7 @@ Credentials to access the Alma Label Print Web Service, including the path to th
 * A PC running Windows XP or newer.
 * An up-to-date version of the .Net Framework (4 or higher)
 * An up-to-date version of Java (1.7.xx or higher) is required to use the deprecated "SOAP" access method.
-* An API key from Ex Libris
+* An API key from Ex Libris with read-access to Bibliographic records
 
 ## Installation Instructions
 
