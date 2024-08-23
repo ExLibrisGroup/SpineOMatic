@@ -172,7 +172,7 @@ Public Class Form1
     'v. 2.3: dlgSettings.UseEXDialog = True to enable print dialog selection in Windows 7
     'v. 2.2: corrects spacing & punctuation errors in incoming call numbers (for TML);
     'v. ...: 
-    Dim somVersion As String = "8.1.2"
+    Dim somVersion As String = "8.1.3"
     Dim javaClassName As String = "almalabelu2" 'the java class name
     Dim javaSDKName As String = "alma-sdk.1.0.jar" 'the Ex Libris SDK for web services
     Dim javaTest As String = "javatest" 'java class that reports presence and version of java
@@ -1120,8 +1120,22 @@ Public Class Form1
         plOutput.Text = ""
         For k = 0 To line.Length - 1
             If line(k).contains(vbTab) Then
-                plOutput.Text = plOutput.Text & line(k).substring(line(k).indexOf(vbTab) + 1) & vbCrLf
-                line(k) = line(k).substring(0, line(k).indexOf(vbTab))
+                'The two lines of code commented out below were replaced with monstrousity below it (up to the "Else") to fix GitHub issue #70.
+                'For some reason, a leading unicode character was causing a problem with the .indexOf function.
+                'plOutput.Text = plOutput.Text & line(k).substring(line(k).indexOf(vbTab) + 1) & vbCrLf
+                'line(k) = line(k).substring(0, line(k).indexOf(vbTab))
+                Dim iTabLoc = line(k).indexOf(vbTab)
+                If iTabLoc < 0 Then
+                    iTabLoc = InStr(line(k), vbTab)
+                Else
+                    iTabLoc = iTabLoc + 1
+                End If
+                plOutput.Text = plOutput.Text & line(k).substring(iTabLoc) & vbCrLf
+                iTabLoc = line(k).indexOf(vbTab)
+                If iTabLoc < 0 Then
+                    iTabLoc = InStr(line(k), vbTab)
+                End If
+                line(k) = line(k).substring(0, iTabLoc)
             Else
                 plOutput.Text = plOutput.Text & line(k)
             End If
