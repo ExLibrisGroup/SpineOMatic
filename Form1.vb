@@ -12,6 +12,10 @@ Imports System.Web.Script.Serialization
 
 
 Public Class Form1
+    'v. 8.1.4: Bug fix release
+    '       Fixed start row/column persistence issue - settings now save/load correctly per Station
+    '       Fixed Windows 11 multi-page batch printing start position reset issue
+    '
     'v. 8.0: Major release
     '        Includes checking GitHub for new version and linking to GitHub wiki for documentation. Removed references to BC license and server.
     '
@@ -172,7 +176,7 @@ Public Class Form1
     'v. 2.3: dlgSettings.UseEXDialog = True to enable print dialog selection in Windows 7
     'v. 2.2: corrects spacing & punctuation errors in incoming call numbers (for TML);
     'v. ...: 
-    Dim somVersion As String = "8.1.3"
+    Dim somVersion As String = "8.1.4"
     Dim javaClassName As String = "almalabelu2" 'the java class name
     Dim javaSDKName As String = "alma-sdk.1.0.jar" 'the Ex Libris SDK for web services
     Dim javaTest As String = "javatest" 'java class that reports presence and version of java
@@ -1111,6 +1115,13 @@ Public Class Form1
         '    lst = lst & e.PageSettings.PrinterSettings.PaperSizes(i).ToString() & vbCrLf
         'Next
         'MsgBox("Paper Sizes" & vbCrLf & lst)
+    End Sub
+
+    Private Sub PrintDocument2_BeginPrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs) Handles PrintDocument2.BeginPrint
+        'Reset print state at the beginning of each print job (preview or actual print)
+        'This ensures the start row/col settings are applied consistently
+        firstPage = True
+        nxt = 0
     End Sub
 
     Private Function removePocket(ByVal line As Array) As Array

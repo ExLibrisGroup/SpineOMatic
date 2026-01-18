@@ -1674,7 +1674,7 @@ Partial Class Form1
         Me.inStartCol.Name = "inStartCol"
         Me.inStartCol.Size = New System.Drawing.Size(20, 13)
         Me.inStartCol.TabIndex = 33
-        Me.inStartCol.Tag = ""
+        Me.inStartCol.Tag = "text_startcol"
         Me.inStartCol.Text = "1"
         Me.inStartCol.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.ToolTip1.SetToolTip(Me.inStartCol, "Column containing first unused label.")
@@ -1686,7 +1686,7 @@ Partial Class Form1
         Me.inStartRow.Name = "inStartRow"
         Me.inStartRow.Size = New System.Drawing.Size(20, 13)
         Me.inStartRow.TabIndex = 32
-        Me.inStartRow.Tag = ""
+        Me.inStartRow.Tag = "text_startrow"
         Me.inStartRow.Text = "1"
         Me.inStartRow.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.ToolTip1.SetToolTip(Me.inStartRow, "Row containing first unused label.")
